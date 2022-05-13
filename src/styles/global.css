@@ -1,4 +1,4 @@
-@import "../public/fonts/soehne.css";
+/* @import "../public/fonts/soehne.css"; */
 
 :root {
   --font-fallback: --apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto",
@@ -91,6 +91,10 @@
   }
 }
 
+/* ---------------------------------- */
+/* Base Element Styles */
+/* ---------------------------------- */
+
 ::selection {
   background: var(--selection);
   text-shadow: none;
@@ -159,7 +163,24 @@ blockquote {
   border-left: solid 3px;
 }
 
-.content-block > :where(h1, h2, h3, h4, h5, h6) {
+ul {
+  list-style: none;
+  list-style-position: outside;
+  margin: 0 0 1rem 1rem;
+  padding: 0;
+}
+
+ul li:before {
+  content: "–";
+  display: inline-block;
+  text-indent: calc(1rem * -1);
+}
+
+/* ---------------------------------- */
+/* Content Block Styles */
+/* ---------------------------------- */
+
+/* .content-block > :where(h1, h2, h3, h4, h5, h6) {
   margin-top: 56px;
   margin-bottom: 32px;
 }
@@ -181,18 +202,20 @@ blockquote {
   font-family: var(--font-display);
   font-feature-settings: "kern", "calt", "case";
   margin: 0;
-}
+} */
 
+p,
+li,
 .content-text {
   color: var(--fg);
   letter-spacing: 0;
   font-size: var(--text);
   line-height: var(--leading);
-  font-feature-settings: "kern", "frac", "kern", "ss02";
+  /* font-feature-settings: "kern", "frac", "kern", "ss02"; */
   margin: 0;
 }
 
-.spacer {
+my-spacer {
   display: block;
   margin-top: calc(var(--default-gap) * var(--spacer-y, 1) - 1px);
 }
@@ -204,56 +227,7 @@ blockquote {
 }
 
 /* ---------------------------------- */
-
-.dash-list {
-  list-style: none;
-  list-style-position: outside;
-  margin: 0 0 1rem 1rem;
-  padding: 0;
-}
-
-.dash-list li:before {
-  content: "–";
-  display: inline-block;
-  text-indent: calc(1rem * -1);
-}
-
-.post-list li {
-  display: flex;
-}
-
-.post-list {
-  list-style: none;
-  list-style-position: outside;
-  margin: 0;
-  padding: 0;
-}
-
-.post-list-date {
-  flex: 0 0 70px;
-  margin-right: 12px;
-}
-
-.post-list-link {
-  flex: 1;
-}
-
-@media (max-width: 768px) {
-  .post-list li {
-    /* flex-direction: column; */
-    /* margin-bottom: 16px; */
-  }
-
-  /* .post-list-date {
-    flex: 0;
-    width: 100%;
-  }
-  .post-list-link {
-    flex: 0;
-    width: 100%;
-  } */
-}
-
+/* Post Meta Styles */
 /* ---------------------------------- */
 
 .meta {
@@ -282,6 +256,8 @@ blockquote {
   }
 }
 
+/* ---------------------------------- */
+/* Footnote styles */
 /* ---------------------------------- */
 
 sup {
@@ -388,7 +364,10 @@ sup a:hover {
 }
 
 /* ---------------------------------- */
+/* Underline link styles */
+/* ---------------------------------- */
 
+a,
 .underline,
 .footnote-backref {
   color: var(--gray11);
@@ -401,23 +380,9 @@ sup a:hover {
   text-shadow: 0.1em 0 var(--bg), -0.1em 0 var(--bg);
 }
 
+a:hover,
 .underline:hover,
 .footnote-backref:hover {
   color: var(--fg);
   background-size: 0% 1px;
-}
-
-.redacted-link {
-  color: var(--fg);
-  background-image: linear-gradient(var(--fg), var(--fg));
-  background-position: 0% 100%;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  transition: background-size 0.3s;
-  text-decoration: none;
-}
-
-.redacted-link:hover {
-  color: var(--purple);
-  background-size: 0% 100%;
 }

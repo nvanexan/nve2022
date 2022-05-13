@@ -9,13 +9,6 @@ published: true
 
 # What I'm doing now {% .content-heading %}
 
-{% DashedList %}
-
-- test
-- testing again
-
-{% /DashedList %}
-
 - Working with a publicly traded provider of human resources software to help make their aging [Dojo](https://dojotoolkit.org/) / [React](https://reactjs.org/) codebase accessible to [WCAG Level AA spec](https://www.w3.org/WAI/WCAG2AA-Conformance).
 - Working embedded with a global leader in social media management as a privacy engineer, assisting with the privacy design of various projects and processes.
 - Rebuilding this personal site with [Next.js](https://nextjs.org/) and [mdx](https://mdxjs.com).
@@ -23,5 +16,7 @@ published: true
 - Listening to film scores by day, and [Japandroids](https://japandroids.com/) in the evening.
 - Following the adventures of [Hunded Rabbits](https://100r.co/site/home.html), inspired by their choices.
 - Learning about [Project Gemini](https://gemini.circumlunar.space/), a new internet protocol between gopher and http.
+
+{% spacer size=4 /%}
 
 This is a [now](https://nownownow.com/about) page. You can make one too.

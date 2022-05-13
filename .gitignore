@@ -11,6 +11,8 @@
 #.pnp.*
 
 node_modules
+.parcel-cache
+parcel-bundle-reports
 
 # -------
 build

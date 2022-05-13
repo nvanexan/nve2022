@@ -1,4 +1,6 @@
 {
-  "now": "index",
-  "changelog": "index"
+  "now": "[page]",
+  "changelog": "[page]",
+  "index": "[page]",
+  "test/testing": "[page]"
 }
