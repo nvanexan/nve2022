@@ -1,4 +1,4 @@
-/* @import "../public/fonts/soehne.css"; */
+@import "../../public/fonts/soehne.css";
 
 :root {
   --font-fallback: --apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto",
@@ -147,6 +147,7 @@ h6 {
   line-height: var(--leading);
   font-family: var(--font-display);
   font-feature-settings: "kern", "calt", "case";
+  margin: 0;
 }
 
 em,
@@ -180,29 +181,18 @@ ul li:before {
 /* Content Block Styles */
 /* ---------------------------------- */
 
-/* .content-block > :where(h1, h2, h3, h4, h5, h6) {
+/* article > :where(h1, h2, h3, h4, h5, h6) {
   margin-top: 56px;
   margin-bottom: 32px;
-}
+} */
 
-.content-block > * {
+article > * {
   margin-bottom: 28px !important;
 }
 
-.content-block > :first-child {
+article > :first-child {
   margin-top: 0;
 }
-
-.content-heading {
-  color: var(--fg);
-  font-weight: 600;
-  line-height: 1.4;
-  font-size: var(--text);
-  line-height: var(--leading);
-  font-family: var(--font-display);
-  font-feature-settings: "kern", "calt", "case";
-  margin: 0;
-} */
 
 p,
 li,
@@ -218,6 +208,7 @@ li,
 my-spacer {
   display: block;
   margin-top: calc(var(--default-gap) * var(--spacer-y, 1) - 1px);
+  margin-bottom: 0;
 }
 
 .bookmarks ul {
@@ -226,6 +217,20 @@ my-spacer {
   grid-auto-rows: auto;
 }
 
+.content-heading {
+  color: var(--fg);
+  font-weight: 600;
+  line-height: 1.4;
+  font-size: var(--text);
+  line-height: var(--leading);
+  font-family: var(--font-display);
+  font-feature-settings: "kern", "calt", "case";
+  margin: 0 !important;
+}
+
+.content-subheading {
+  color: var(--gray11);
+}
 /* ---------------------------------- */
 /* Post Meta Styles */
 /* ---------------------------------- */
@@ -243,6 +248,20 @@ my-spacer {
 .meta h2 a {
   color: var(--fg);
   text-decoration: none;
+}
+
+h2.header-title {
+  margin-bottom: 0 !important;
+}
+
+h2.header-title a {
+  color: var(--fg);
+  text-decoration: none;
+  background-image: none;
+}
+
+p.header-date {
+  color: var(--gray11);
 }
 
 @media (max-width: 1024px) {

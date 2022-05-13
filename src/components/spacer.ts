@@ -1,23 +1,29 @@
-import { LitElement, html, css } from "lit";
-import { property } from "lit/decorators.js";
-import { styleMap } from "lit/directives/style-map.js";
-
-export class Spacer extends LitElement {
-  @property()
-  size?: number = 5.25;
-
-  @property()
-  styles = css`
-    :host {
-      --spacer-y: ${this.size as any};
-    }
+const getTemplate = (size: number) =>
+  `
+  <style>
+  .spacer {
+    display: block;
+    margin-top: calc(var(--default-gap) * ${size} - 1px);
+    margin-bottom: 0;
+  }
+  </style>
+  <span class="spacer"></span>
   `;
 
+export class Spacer extends HTMLElement {
   constructor() {
     super();
   }
 
-  render() {
-    return html`<span style=${styleMap(this.styles as any)}></span>`;
+  set size(value) {
+    this.setAttribute("size", `${value}`);
+  }
+
+  get size() {
+    return Number(this.getAttribute("size"));
+  }
+
+  connectedCallback() {
+    this.innerHTML = `<span class="spacer"></span>`;
   }
 }
