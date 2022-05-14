@@ -7,11 +7,7 @@ summary: "Current areas of focus + interests"
 published: true
 ---
 
-# What I'm Doing Now {% .content-heading %}
-
-Current areas of focus + interests {% .content-subheading %}
-
-{% partial variables={date: "2022-05-13"} file="header.md" /%}
+{% partial file="article-title.md" /%}
 
 - Working with a publicly traded provider of human resources software to help make their aging [Dojo](https://dojotoolkit.org/) / [React](https://reactjs.org/) codebase accessible to [WCAG Level AA spec](https://www.w3.org/WAI/WCAG2AA-Conformance).
 - Working embedded with a global leader in social media management as a privacy engineer, assisting with the privacy design of various projects and processes.
@@ -21,6 +17,6 @@ Current areas of focus + interests {% .content-subheading %}
 - Following the adventures of [Hunded Rabbits](https://100r.co/site/home.html), inspired by their choices.
 - Learning about [Project Gemini](https://gemini.circumlunar.space/), a new internet protocol between gopher and http.
 
-{% spacer size=4 /%}
+{% spacer /%}
 
 This is a [now](https://nownownow.com/about) page. You can make one too.

@@ -1,17 +1,35 @@
 ---
 html_title: "Changelog"
 title: "Changelog"
-date: "2022-04-01T20:49:17Z"
+date: "2022-04-30T01:33:19Z"
 social_image: ""
 summary: "Monthly updates + happenings"
 published: true
 ---
 
+{% partial file="article-title.md" /%}
+
+{% section .bookmarks %}
+
+- [2022.04](#april-2022)
 - [2022.03](#march-2022)
 - [2022.02](#february-2022)
 - [2022.01](#january-2022)
 - [2021.12](#december-2021)
 - [2021.11](#november-2021)
+
+{% /section %}
+
+## April 2022
+
+- Continued accessibility engineering for a publicly traded provider of human resources software. Really productive month. Helped them interview a few UI engineering candidates.
+- Continued embedded privacy engineering work for a high growth SaaS client. Spent time considering how data can be schemaed to facilitate GDPR Article 28(3)(e) requests.
+- Saw my sister, brother-in-law, neice and nephew for the first time in months over Easter. Ate delicious Armenian food to the point of uncomfortable fullness.
+- Got my first haircut in 5 months.
+- Went running for first time in nearly a year.
+- Watched a couple good new shows: [Tokyo Vice](https://www.imdb.com/title/tt2887954/) and [Slow Horses](https://www.imdb.com/title/tt5875444/).
+- Booked appointment for a new tattoo!
+- These are [the songs that carried me through April](https://open.spotify.com/playlist/7HPy8tb3vmtfSNrvExnqAK?si=8282076e00e54937).
 
 ## March 2022
 

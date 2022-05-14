@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
+import { BUILD_DIR } from "./build";
 
 export function getTemplate(fileName: string) {
-  // TODO: make async
   return fs.readFileSync(
     path.resolve("./src/templates", `${fileName}.html`),
     "utf-8"
@@ -10,8 +10,15 @@ export function getTemplate(fileName: string) {
 }
 
 export function getContent(fileName: string) {
-  // TODO: make async
   return fs.readFileSync(path.resolve("./content", `${fileName}.md`), "utf-8");
+}
+
+export function writeFile(dir: string, fileName: string, html: string) {
+  const path = dir ? `${BUILD_DIR}/${dir}` : `${BUILD_DIR}`;
+  if (!fs.existsSync(path)) {
+    fs.mkdirSync(path, { recursive: true });
+  }
+  fs.writeFileSync(`${path}/${fileName}.html`, html);
 }
 
 export function copyFileSync(source: string, target: string) {
@@ -33,7 +40,7 @@ export function copyFolderRecursiveSync(source: string, target: string) {
   // Check if folder needs to be created or integrated
   var targetFolder = path.join(target, path.basename(source));
   if (!fs.existsSync(targetFolder)) {
-    fs.mkdirSync(targetFolder);
+    fs.mkdirSync(targetFolder, { recursive: true });
   }
 
   // Copy
