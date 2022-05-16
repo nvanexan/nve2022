@@ -82,6 +82,7 @@ function checkForValidationErrors(ast: Node, config: Config) {
 }
 
 async function compile(contentPath: string, templateFileName: string) {
+  console.log(`compiling ${contentPath} => ${templateFileName}`);
   const [contentFileName, contentDir] = parseFileName(contentPath);
   const template = getTemplate(templateFileName);
   const source = getContent(contentPath);
@@ -98,20 +99,19 @@ async function compile(contentPath: string, templateFileName: string) {
     .replace(/{{ PAGE_TITLE }}/, frontmatter.html_title)
     .replace(/{{ CONTENT }}/, rendered);
 
-  html = await injectCss(html);
-  html = injectPrefetchLinks(ast, html);
+  const withStylesHtml = await injectCss(html);
+  const withPrefetchLinksHtml = injectPrefetchLinks(ast, withStylesHtml);
 
-  writeFile(contentDir, contentFileName, html);
+  writeFile(contentDir, contentFileName, withPrefetchLinksHtml);
 }
 
-function compilePages() {
+async function compilePages() {
   // For each page / template pair, compile page content into a file
-  Object.entries(pages).forEach(([path, template]) => {
+  const pagesToCompile = Object.entries(pages).map(([path, template]) => {
     console.log(`Compiling: ${path}`);
-    compile(path, template);
+    return compile(path, template);
   });
-
-  console.log("Finished compiling pages");
+  await Promise.all(pagesToCompile);
 }
 
 function copyPublic() {
@@ -128,17 +128,17 @@ function parseFileName(path: string) {
 function runContentWatcher() {
   const watcher = watch(["./content/**/*.md"]);
   console.log("Listening for changes...");
-  watcher.on("change", function (path) {
+  watcher.on("change", async function (path) {
     // const [fileName] = parseFileName(path);
     // const template = pages[fileName as "now"];
     // console.log(`A file has changed, recompiling ${path}...`);
     // compile(fileName, template);
     console.log("A file has changed, recompiling pages...");
-    compilePages();
+    await compilePages();
   });
-  watcher.on("add", function (path) {
+  watcher.on("add", async function (path) {
     console.log("A file has been added, recompiling pages...");
-    compilePages();
+    await compilePages();
   });
 }
 
@@ -174,13 +174,16 @@ async function runParcelWatcher() {
   });
 }
 
-compilePages();
-copyPublic();
-
-if (argv.watch) {
-  runParcelWatcher();
-  runContentWatcher();
-  runPublicWatcher();
-} else {
-  process.exit();
+async function start() {
+  if (argv.watch) {
+    runParcelWatcher();
+    runContentWatcher();
+    runPublicWatcher();
+  } else {
+    copyPublic();
+    await compilePages();
+    process.exit();
+  }
 }
+
+start();

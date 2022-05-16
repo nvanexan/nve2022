@@ -4,7 +4,7 @@
     "prebuild": "npm run clean",
     "clean": "rm -rf ./dist",
     "serve": "npx http-server dist -g",
-    "build": "npm run build-templates && npm run build-frontend",
+    "build": "npm run build-frontend && npm run build-templates",
     "build-templates": "npx tsnd lib/build.ts",
     "build-frontend": "npx parcel build 'src/main.ts' 'src/styles/**/*.css'",
     "predev": "npm run clean",
