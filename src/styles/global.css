@@ -164,7 +164,7 @@ article > :where(h1, h2, h3, h4, h5, h6) {
 }
 
 article > * {
-  margin-bottom: 28px;
+  margin-bottom: 28px !important;
 }
 
 .content-heading,
@@ -192,6 +192,7 @@ ul,
   font-size: var(--text);
   line-height: var(--leading);
   font-feature-settings: "kern", "frac", "kern", "ss02";
+  margin: 0;
 }
 
 .spacer {
@@ -203,6 +204,13 @@ ul,
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: auto;
+}
+
+img {
+  width: 640px;
+  height: auto;
+  min-height: 360px;
+  aspect-ratio: attr(width) / attr(height);
 }
 
 /* ---------------------------------- */
@@ -265,12 +273,14 @@ sup {
   font-weight: 500;
   top: -3px;
   line-height: 0;
+  color: var(--gray11);
 }
 
 sup a {
   color: var(--gray11);
   text-decoration: none;
   transition: color 0.3s ease;
+  background-image: none;
 }
 
 sup a:hover {
@@ -278,41 +288,50 @@ sup a:hover {
 }
 
 .footnotes {
-  --side: 64px;
-  --page-margin: calc((100vw - var(--content-width)) / 2);
-  position: absolute;
-  top: 0;
-  left: calc(var(--content-width) + var(--side));
-  width: calc(var(--page-margin) - var(--side) - 48px);
-  max-width: 192px;
-}
-
-.footnotes hr {
-  display: none;
-}
-
-.footnotes ol {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  position: static;
+  width: unset;
+  left: unset;
+  right: unset;
+  max-width: unset;
+  border-top: solid 1px var(--gray6);
+  padding-top: 28px;
+  margin-top: var(--spacer-y);
+  opacity: 0;
   counter-reset: item 0;
+  animation-duration: 1s;
+  animation-name: fadein;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+  animation-iteration-count: 1;
 }
 
-.footnotes li {
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.footnotes p {
   font-size: 14px;
   line-height: 22px;
   color: var(--mono9);
-  position: absolute;
   padding-bottom: 28px;
   opacity: 0.5;
   transition: opacity 0.3s ease;
+  padding-left: 16px;
+  position: relative;
+  transition: opacity 0.3s ease;
 }
 
-.footnotes li:hover {
+.footnotes p:hover {
   opacity: 1;
 }
 
-.footnotes li:before {
+.footnotes p:before {
   content: counter(item) ". ";
   counter-increment: item 1;
   position: absolute;
@@ -320,44 +339,38 @@ sup a:hover {
   font-size: inherit;
   font-weight: 700;
   font-size: smaller;
-  left: -12px;
+  transform: translate(-12px, 1px);
 }
 
-.footnotes li a.footnote-backref {
-  opacity: 0;
+.footnotes p a.footnote-backref {
+  margin-left: 6px;
+  display: inline-block;
+  background-image: none;
 }
 
-@media (max-width: 1024px) {
-  .footnotes {
-    position: static;
-    width: unset;
-    left: unset;
-    right: unset;
-    max-width: unset;
-    border-top: solid 1px var(--gray6);
-    padding-top: 28px;
-    margin-top: var(--spacer-y);
-  }
+/* ---------------------------------- */
+/* .footnotes-js class and styles are for overrides of default footnotes styles
+for situations where the user has JS enabled. We use !important overrides to
+override styles that are injected into html page at build time, and so we don't
+have to inline all of these styles. */
+/* ---------------------------------- */
 
-  .footnotes li {
-    position: static;
-    width: unset;
-    left: unset;
-    right: unset;
-    max-width: unset;
-    margin-bottom: 14px;
-    padding-bottom: 0;
-    padding-left: 14px;
-  }
+.footnotes-js {
+  --side: 64px;
+  --page-margin: calc((100vw - var(--content-width)) / 2);
+  position: absolute !important;
+  top: 0 !important;
+  left: calc(var(--content-width) + var(--side)) !important;
+  width: calc(var(--page-margin) - var(--side) - 48px) !important;
+  max-width: 192px !important;
+}
 
-  .footnotes li:before {
-    left: 0;
-  }
+.footnotes-js p {
+  position: absolute !important;
+}
 
-  .footnotes li a.footnote-backref {
-    margin-left: 6px;
-    opacity: 1;
-  }
+.footnotes-js p a.footnote-backref {
+  display: none !important;
 }
 
 /* ---------------------------------- */

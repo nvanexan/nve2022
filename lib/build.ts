@@ -98,7 +98,7 @@ async function compile(contentPath: string, templateFileName: string) {
     .replace(/{{ PAGE_TITLE }}/, frontmatter.html_title)
     .replace(/{{ CONTENT }}/, rendered);
 
-  // html = await injectCss(html);
+  html = await injectCss(html);
   html = injectPrefetchLinks(ast, html);
 
   writeFile(contentDir, contentFileName, html);
@@ -167,6 +167,7 @@ async function runParcelWatcher() {
       console.log(
         `✨ Built ${bundles.length} bundles in ${event.buildTime}ms!`
       );
+      compilePages();
     } else if (event?.type === "buildFailure") {
       console.log(event.diagnostics);
     }
