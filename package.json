@@ -1,5 +1,5 @@
 {
-  "name": "markdoc-test",
+  "name": "nve2022",
   "scripts": {
     "preinstall": "npx npm-force-resolutions",
     "prebuild": "npm run clean",
