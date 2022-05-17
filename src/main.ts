@@ -19,7 +19,6 @@ images.forEach((elem) => {
 });
 
 function checkImagesLoaded() {
-  console.log(`run ${timesRun}`);
   if (imagesLoaded === imageCount || timesRun >= 10) {
     clearInterval(intervalId);
     setFootnotePositions();
@@ -27,37 +26,43 @@ function checkImagesLoaded() {
   timesRun++;
 }
 
+const fnContainer = document.getElementById("footnotes");
+
 function setFootnotePositions() {
-  const container = document.getElementById("footnotes");
-  //
-  if (mediaQuery.matches) {
-    (container as HTMLElement).setAttribute("class", "footnotes");
-  } else {
-    (container as HTMLElement).setAttribute("class", "footnotes footnotes-js");
-  }
-  //
-  const footnotes = document.querySelectorAll("#footnotes p");
-  footnotes.forEach((elem) => {
-    const id = elem.id.replace("fn-", "");
-    const fnRef = document.getElementById(`fnref-${id}`);
-    const containerTop = fnRef?.parentElement?.offsetTop;
-    let top;
-    if (!elem.previousElementSibling) {
-      top = containerTop;
+  if (fnContainer) {
+    if (mediaQuery.matches) {
+      (fnContainer as HTMLElement).setAttribute("class", "footnotes");
     } else {
-      const prevSiblingRect =
-        elem.previousElementSibling.getBoundingClientRect();
-      const prevSiblingBottom =
-        prevSiblingRect.y + prevSiblingRect.height + window.scrollY;
-      top =
-        prevSiblingBottom && prevSiblingBottom > (containerTop as number)
-          ? prevSiblingBottom
-          : containerTop;
+      (fnContainer as HTMLElement).setAttribute(
+        "class",
+        "footnotes footnotes-js"
+      );
     }
-    (elem as HTMLElement).style.top = mediaQuery.matches ? "0px" : `${top}px`;
-  });
+    const footnotes = document.querySelectorAll("#footnotes p");
+    footnotes.forEach((elem) => {
+      const id = elem.id.replace("fn-", "");
+      const fnRef = document.getElementById(`fnref-${id}`);
+      const containerTop = fnRef?.parentElement?.offsetTop;
+      let top;
+      if (!elem.previousElementSibling) {
+        top = containerTop;
+      } else {
+        const prevSiblingRect =
+          elem.previousElementSibling.getBoundingClientRect();
+        const prevSiblingBottom =
+          prevSiblingRect.y + prevSiblingRect.height + window.scrollY;
+        top =
+          prevSiblingBottom && prevSiblingBottom > (containerTop as number)
+            ? prevSiblingBottom
+            : containerTop;
+      }
+      (elem as HTMLElement).style.top = mediaQuery.matches ? "0px" : `${top}px`;
+    });
+  }
 }
 
 const intervalId = setInterval(checkImagesLoaded, 10);
 
-window.addEventListener("resize", setFootnotePositions);
+if (fnContainer) {
+  window.addEventListener("resize", setFootnotePositions);
+}
