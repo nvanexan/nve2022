@@ -2,9 +2,9 @@
   --font-fallback: --apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto",
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  --font-sans: "Sohne", "Inter", var(--font-fallback);
-  --font-display: "Inter", var(--font-fallback);
-  --font-serif: "Newsreader", "Signifier", "Times", serif;
+  --font-sans: "Sohne", var(--font-fallback);
+  --font-display: "Helvetica", var(--font-fallback);
+  --font-serif: "Times", serif;
   --font-mono: "Menlo", monospace;
   --default-gap: 0.5rem;
   --gap-sm: 4px;
