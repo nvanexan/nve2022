@@ -22,17 +22,7 @@
     <meta property="og:description" content="{{ seo_description }}" />
     <meta property="og:image" content="{{ social_image }}" />
 
-    <!-- Icons -->
-    <link rel="icon" href="{{ base_url }}/public/nve-icon.png" />
-    <link
-      href="{{ base_url }}/public/nve-icon.png"
-      rel="shortcut icon"
-      type="image/x-icon"
-    />
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles/global.css" />
-    <link rel="stylesheet" href="/public/fonts/soehne.css" />
+    <!-- Third party fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -41,8 +31,29 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Newsreader:ital@1&display=swap"
     />
-    <!-- {{ PREFETCH_ROUTES }} -->
+
+    <!-- Styles -->
+    <style>
+      @font-face {
+        font-family: "Sohne";
+        src: url("/public/fonts/soehne-buch.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: fallback;
+      }
+    </style>
     <!-- {{ SERVER_STYLES }} -->
+    <link rel="stylesheet" href="/styles/global.css" />
+
+    <!-- Icons -->
+    <link rel="icon" href="{{ base_url }}/public/nve-icon.png" />
+    <link
+      href="{{ base_url }}/public/nve-icon.png"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+
+    <!-- {{ PREFETCH_ROUTES }} -->
   </head>
   <body>
     <div class="app">{{ CONTENT }}</div>
