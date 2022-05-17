@@ -9,7 +9,7 @@ summary: "Current areas of focus + interests"
 
 # Nick Van Exan
 
-Senior software developer and certified privacy professional (CIPP C/E). Helping organizations build ethical products & services that people _trust_.
+Senior software developer and certified privacy professional (CIPP C/E). Helping organizations build _ethical_ products and services.
 
 - [Now](/now)
 - [Changelog](/changelog)
