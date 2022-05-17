@@ -1,0 +1,396 @@
+:root {
+  --font-fallback: --apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  --font-sans: "Sohne", "Inter", var(--font-fallback);
+  --font-display: "Inter", var(--font-fallback);
+  --font-serif: "Newsreader", "Signifier", "Times", serif;
+  --font-mono: "Menlo", monospace;
+  --default-gap: 0.5rem;
+  --gap-sm: 4px;
+  --gap: 8px;
+  --gap-2x: 16px;
+  --gap-3x: 24px;
+  --gap-4x: 32px;
+  --gap-8x: 64px;
+  --gap-16x: 128px;
+  --leading-2xl: 54px;
+  --leading-xl: 40px;
+  --leading-lg: 32px;
+  --leading: 28px;
+  --leading-sm: 22px;
+  --leading-xs: 18px;
+  --text-2xl: 30px;
+  --text-xl: 24px;
+  --text-lg: 20px;
+  --text: 16px;
+  --text-sm: 14px;
+  --text-xs: 12px;
+
+  --mobile: 768px;
+  --tablet: 1024px;
+  --content-width: 640px;
+  --page-left: auto;
+  --page-top: 192px;
+  --header-height: 48px;
+  --body-margin-left: max(24px, env(safe-area-inset-left));
+  --body-margin-right: max(24px, env(safe-area-inset-right));
+
+  --fg: var(--gray1);
+  --bg: #ffffff;
+  --alpha: hsla(0, 0%, 9%, 0.9);
+  --gray0: #111111;
+  --gray1: #161616;
+  --gray2: #1c1c1c;
+  --gray3: #232323;
+  --gray4: #282828;
+  --gray5: #2e2e2e;
+  --gray6: #343434;
+  --gray7: #3e3e3e;
+  --gray8: #505050;
+  --gray9: #707070;
+  --gray10: #7e7e7e;
+  --gray11: #a0a0a0;
+  --gray12: #ededed;
+  --grayA1: hsl(0 0% 100%/0);
+  --grayA2: hsl(0 0% 100%/0.026);
+  --grayA3: hsl(0 0% 100%/0.056);
+  --grayA4: hsl(0 0% 100%/0.077);
+  --grayA5: hsl(0 0% 100%/0.103);
+  --grayA6: hsl(0 0% 100%/0.129);
+  --grayA7: hsl(0 0% 100%/0.172);
+  --grayA8: hsl(0 0% 100%/0.249);
+  --grayA9: hsl(0 0% 100%/0.386);
+  --grayA10: hsl(0 0% 100%/0.446);
+  --grayA11: hsl(0 0% 100%/0.592);
+  --grayA12: hsl(0 0% 100%/0.923);
+
+  --selection: var(--grayA4);
+
+  --spacer-y: 8;
+  --prism-bg: #fbfbfb;
+
+  --highlight-bg: rgba(255, 216, 0, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: var(--gray0);
+    --fg: var(--gray12);
+    --prism-bg: #111111;
+    --highlight-bg: var(--selection);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --page-top: 64px;
+  }
+}
+
+::selection {
+  background: var(--selection);
+  text-shadow: none;
+  -webkit-text-decoration-color: var(--gray9);
+  text-decoration-color: var(--gray9);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--fg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: var(--body-margin-left);
+  margin-right: var(--body-margin-right);
+  overflow-x: hidden;
+}
+
+.app {
+  min-height: 75vh;
+  position: relative;
+  max-width: var(--content-width);
+  margin: 0 auto 0 var(--page-left);
+  background: var(--bg);
+  padding: var(--page-top) 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--fg);
+  font-weight: 600;
+  line-height: 1.4;
+  font-size: var(--text);
+  line-height: var(--leading);
+  font-family: var(--font-display);
+  font-feature-settings: "kern", "calt", "case";
+  margin: 0;
+}
+
+em,
+blockquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  line-height: normal;
+  font-size: calc(1em + 2px);
+  color: var(--fg);
+}
+
+blockquote {
+  padding-left: var(--body-margin-left);
+  border-left: solid 3px;
+}
+
+article > :where(h1, h2, h3, h4, h5, h6) {
+  margin-top: 56px;
+  margin-bottom: 32px;
+}
+
+article > * {
+  margin-bottom: 28px !important;
+}
+
+.content-heading,
+.article-title {
+  color: var(--fg);
+  font-weight: 600;
+  line-height: 1.4;
+  font-size: var(--text);
+  line-height: var(--leading);
+  font-family: var(--font-display);
+  font-feature-settings: "kern", "calt", "case";
+  margin: 0;
+}
+
+.article-summary {
+  color: var(--gray11);
+  margin: 0;
+}
+
+p,
+ul,
+.content-text {
+  color: var(--fg);
+  letter-spacing: 0;
+  font-size: var(--text);
+  line-height: var(--leading);
+  font-feature-settings: "kern", "frac", "kern", "ss02";
+  margin: 0;
+}
+
+.spacer {
+  display: block;
+  margin-top: calc(var(--default-gap) * var(--spacer-y, 1) - 1px);
+}
+
+.bookmarks ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+}
+
+img {
+  width: 640px;
+  height: auto;
+  min-height: 360px;
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* ---------------------------------- */
+
+ul {
+  list-style: none;
+  list-style-position: outside;
+  margin: 0 0 1rem 1rem;
+  padding: 0;
+}
+
+ul li:before {
+  content: "–";
+  display: inline-block;
+  text-indent: calc(1rem * -1);
+}
+
+/* ---------------------------------- */
+
+.meta {
+  --side: 64px;
+  --page-margin: calc((100vw - var(--content-width)) / 2);
+  position: absolute;
+  right: calc(var(--content-width) + var(--side));
+  width: calc(var(--page-margin) - var(--side) - 48px);
+  max-width: 192px;
+  margin-top: -84px;
+  margin-bottom: 0;
+}
+
+.meta a {
+  color: var(--fg);
+  text-decoration: none;
+  background-image: none;
+}
+
+.meta p {
+  color: var(--gray11);
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .meta {
+    position: static;
+    width: unset;
+    left: unset;
+    right: unset;
+    max-width: unset;
+    margin-top: 42px;
+  }
+}
+
+/* ---------------------------------- */
+
+sup {
+  position: relative;
+  font-size: 12px;
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 500;
+  top: -3px;
+  line-height: 0;
+  color: var(--gray11);
+}
+
+sup a {
+  color: var(--gray11);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  background-image: none;
+}
+
+sup a:hover {
+  color: var(--fg);
+}
+
+.footnotes {
+  position: static;
+  width: unset;
+  left: unset;
+  right: unset;
+  max-width: unset;
+  border-top: solid 1px var(--gray6);
+  padding-top: 28px;
+  margin-top: var(--spacer-y);
+  opacity: 0;
+  counter-reset: item 0;
+  animation-duration: 1s;
+  animation-name: fadein;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.footnotes p {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--mono9);
+  padding-bottom: 28px;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  padding-left: 16px;
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+.footnotes p:hover {
+  opacity: 1;
+}
+
+.footnotes p:before {
+  content: counter(item) ". ";
+  counter-increment: item 1;
+  position: absolute;
+  vertical-align: super;
+  font-size: inherit;
+  font-weight: 700;
+  font-size: smaller;
+  transform: translate(-12px, 1px);
+}
+
+.footnotes p a.footnote-backref {
+  margin-left: 6px;
+  display: inline-block;
+  background-image: none;
+}
+
+/* ---------------------------------- */
+/* .footnotes-js class and styles are for overrides of default footnotes styles
+for situations where the user has JS enabled. We use !important overrides to
+override styles that are injected into html page at build time, and so we don't
+have to inline all of these styles. */
+/* ---------------------------------- */
+
+.footnotes-js {
+  --side: 64px;
+  --page-margin: calc((100vw - var(--content-width)) / 2);
+  position: absolute !important;
+  top: 0 !important;
+  left: calc(var(--content-width) + var(--side)) !important;
+  width: calc(var(--page-margin) - var(--side) - 48px) !important;
+  max-width: 192px !important;
+}
+
+.footnotes-js p {
+  position: absolute !important;
+}
+
+.footnotes-js p a.footnote-backref {
+  display: none !important;
+}
+
+/* ---------------------------------- */
+
+a,
+.underline,
+.footnote-backref {
+  color: var(--gray11);
+  text-decoration: none;
+  background-image: linear-gradient(var(--gray11), var(--gray11));
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  transition: all 0.3s;
+  text-shadow: 0.1em 0 var(--bg), -0.1em 0 var(--bg);
+}
+
+a:hover,
+.underline:hover,
+.footnote-backref:hover {
+  color: var(--fg);
+  background-size: 0% 1px;
+}
