@@ -4,12 +4,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="https://nick.vanexan.ca/nve-icon.png" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <title>{{ seo_title }}</title>
+    <meta name="description" content="{{ seo_description }}" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@nvanexan" />
+    <meta name="twitter:creator" content="@nvanexan" />
+    <meta name="twitter:title" content="{{ seo_title }}" />
+    <meta name="twitter:description" content="{{ seo_description }}" />
+    <meta name="twitter:image" content="{{ twitter_social_image }}" } />
+
+    <!-- OpenGraph -->
+    <meta property="og:url" content="{{ seo_url }}" />
+    <meta property="og:title" content="{{ seo_title }}" />
+    <meta property="og:description" content="{{ seo_description }}" />
+    <meta property="og:image" content="{{ social_image }}" />
+
+    <!-- Icons -->
+    <link rel="icon" href="{{ base_url }}/nve-icon.png" />
     <link
-      href="https://nick.vanexan.ca/nve-icon.png"
+      href="{{ base_url }}/nve-icon.png"
       rel="shortcut icon"
       type="image/x-icon"
     />
+
+    <!-- Styles -->
     <link rel="stylesheet" href="/styles/global.css" />
     <link rel="stylesheet" href="/public/fonts/soehne.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,7 +43,6 @@
     />
     <!-- {{ PREFETCH_ROUTES }} -->
     <!-- {{ SERVER_STYLES }} -->
-    <title>{{ PAGE_TITLE }} | Nick Van Exan</title>
   </head>
   <body>
     <div class="app">{{ CONTENT }}</div>

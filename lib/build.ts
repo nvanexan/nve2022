@@ -13,18 +13,20 @@ import {
 import PurgeCSS from "purgecss";
 import yaml from "js-yaml";
 import { format, parseISO } from "date-fns";
+import { v4 as uuid } from "uuid";
 
 const argv = parseArgs(process.argv.slice(2));
 
 export const BUILD_DIR = "./dist";
 
 interface ArticleFrontMatter {
-  html_title: string;
+  seo_title: string;
+  seo_description: string;
   title: string;
+  summary: string;
   date: string;
   shortDate: string;
   social_image: string;
-  summary: string;
   published: boolean;
 }
 
@@ -81,6 +83,40 @@ function checkForValidationErrors(ast: Node, config: Config) {
   }
 }
 
+const buildMetaTags =
+  (frontmatter: ArticleFrontMatter, path: string, fileName: string) =>
+  (html: string) => {
+    let { seo_title, seo_description } = frontmatter;
+    let base_url = "https://nick.vanexan.ca";
+    let seo_url = path
+      ? `${base_url}/${path}/${fileName}`
+      : `${base_url}/${fileName}`;
+    let twitter_social_image = `${base_url}/public/nve-social-logo-twitter.png?${uuid()}`;
+    let social_image = `${base_url}/public/nve-social-logo.png`;
+
+    if (frontmatter.social_image)
+      twitter_social_image = social_image = frontmatter.social_image;
+
+    if (!seo_description) seo_description = frontmatter.summary;
+
+    if (seo_url.includes("/index")) seo_url = base_url;
+
+    const tokens = {
+      seo_title,
+      seo_description,
+      twitter_social_image,
+      social_image,
+      base_url,
+      seo_url,
+    };
+
+    const result = Object.entries(tokens).reduce((result, [key, value]) => {
+      return result.replaceAll(`{{ ${key} }}`, value);
+    }, html);
+
+    return result;
+  };
+
 async function compile(contentPath: string, templateFileName: string) {
   console.log(`compiling ${contentPath} => ${templateFileName}`);
   const [contentFileName, contentDir] = parseFileName(contentPath);
@@ -95,20 +131,21 @@ async function compile(contentPath: string, templateFileName: string) {
   };
   const content = Markdoc.transform(ast, finalConfig);
   const rendered = Markdoc.renderers.html(content) || "";
-  let html = template
-    .replace(/{{ PAGE_TITLE }}/, frontmatter.html_title)
-    .replace(/{{ CONTENT }}/, rendered);
+  let html = buildMetaTags(
+    frontmatter,
+    contentDir,
+    contentFileName
+  )(template).replace(/{{ CONTENT }}/, rendered);
 
-  const withStylesHtml = await injectCss(html);
-  const withPrefetchLinksHtml = injectPrefetchLinks(ast, withStylesHtml);
+  html = await injectCss(html);
+  html = injectPrefetchLinks(ast, html);
 
-  writeFile(contentDir, contentFileName, withPrefetchLinksHtml);
+  writeFile(contentDir, contentFileName, html);
 }
 
 async function compilePages() {
   // For each page / template pair, compile page content into a file
   const pagesToCompile = Object.entries(pages).map(([path, template]) => {
-    console.log(`Compiling: ${path}`);
     return compile(path, template);
   });
   await Promise.all(pagesToCompile);
@@ -127,7 +164,6 @@ function parseFileName(path: string) {
 
 function runContentWatcher() {
   const watcher = watch(["./content/**/*.md"]);
-  console.log("Listening for changes...");
   watcher.on("change", async function (path) {
     // const [fileName] = parseFileName(path);
     // const template = pages[fileName as "now"];
@@ -176,6 +212,7 @@ async function runParcelWatcher() {
 
 async function start() {
   if (argv.watch) {
+    copyPublic();
     runParcelWatcher();
     runContentWatcher();
     runPublicWatcher();

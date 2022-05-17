@@ -1,5 +1,5 @@
 ---
-html_title: "Changelog"
+seo_title: "Changelog | Nick Van Exan"
 title: "Changelog"
 date: "2022-04-30T01:33:19Z"
 social_image: ""
