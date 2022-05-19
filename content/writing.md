@@ -1,10 +1,10 @@
 ---
 seo_title: "Writing | Nick Van Exan"
-seo_description: "Latest thoughts & musings"
+seo_description: "Select thoughts on sundry topics"
 title: "Writing"
-date: "2022-05-17T00:19:41Z"
+date: "2022-05-18T00:19:41Z"
 social_image: ""
-summary: "Latest thoughts & musings"
+summary: "Select thoughts on sundry topics"
 ---
 
 {% partial file="article-title.md" /%}
