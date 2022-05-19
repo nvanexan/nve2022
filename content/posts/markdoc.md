@@ -2,7 +2,7 @@
 seo_title: "Markdoc"
 title: "Markdoc"
 author: "Nick Van Exan"
-date: "2021-11-19T22:32:27Z"
+date: "2022-05-19T19:39:23Z"
 social_image: ""
 summary: "Using Markdoc for static site generation"
 ---
@@ -27,15 +27,41 @@ Markdoc is a superset of Markdown (specifically the [CommonMark spec](https://sp
 
 First, I would define that element in my markdown file using the Markdoc tag syntax.
 
-[TODO: add example]
+```markdoc
+{% section %}
+
+This content will be rendered in a section element
+
+{% /section %}
+```
 
 Second, I would create a custom Tag that gets used by the Markdoc parser and transformer to transform that document into HTML.
 
-[TODO: add example]
+```typescript
+import { Config, Node, Tag } from "@markdoc/markdoc";
+
+export const section = {
+  render: "section",
+  description: "Create a section container",
+  children: ["heading", "paragraph", "list", "item", "tag"],
+  attributes: {},
+  transform: (node: Node, config: Config) => {
+    const attributes = node.transformAttributes(config);
+    const children = node.transformChildren(config);
+    return new Tag(`section`, attributes, children);
+  },
+};
+```
 
 And that's basically it. The end result is a `<section>` tag in my HTML, which I can then style or augment with JS as needed.[^2]
 
-## Rewriting My Site
+```html
+<section>
+  <p>This content will be rendered in a section element.</p>
+</section>
+```
+
+## Rewriting My Site & Performance Gains
 
 I spent last weekend re-writing my site to make use of Markdoc. I cut a fresh repo. I built a simple build script in TypeScript which takes my markdown files, templated with Markdoc, and renders them to static html pages. There's a bit more to it than that, of course. I had to add support for CSS parsing, so critical styles could be injected into the html files before the global.css loaded, frontmatter parsing for meta tags for SEO reasons, etc.
 
@@ -53,15 +79,14 @@ The performance results were quite impressive. Some comparisons of lighthouse me
 
 I really like Markdoc and I will continue to keep using it. There were some hurdles I had to surmount though in re-writing my site.
 
-First, there were some bugs. I noticed that the image tag, for example, said it supported an optional title attribute. But the parser did not actually return a title attribute. The good news is, because this is open source, and because it's some members of the Stripe team maintaining this repo, I [posted an issue on GitHub](https://github.com/markdoc/markdoc/issues/28) on a Saturday and a PR was submitted and approved on Monday. Nice.
+First, there were some bugs. I noticed that the image tag, for example, said it supported an optional title attribute. But the parser did not actually return a title attribute. The good news is, because this is open source, and because it's some members of the Stripe team maintaining this repo, I [posted an issue on GitHub](https://github.com/markdoc/markdoc/issues/28), [submitted a PR](https://github.com/markdoc/markdoc/pull/38), and it's now patched up.[^3]
 
-Second, not all Markdown tokens are supported by Markdoc. Footnotes, for example, were not supported initially. You can definitely create a custom paragraph tag that sort of hacks around this problem, and builds footnote refs in the paragraph and appends a list of footnote items to the end of the document. That's what I did for this site initially. But it wasn't super ideal. [I've since made a PR to the Markdoc repo](https://github.com/markdoc/markdoc/pull/40) to provide support for footnotes in the Markdoc parser itself. Hopefully that will go through and get incorporated in near future releases. 🤞
+Second, not all Markdown tokens are supported by Markdoc. Footnotes, for example, are not supported at the time of writing. You can definitely create a custom paragraph tag that sort of hacks around this problem, and builds footnote refs in the paragraph and appends a list of footnote items to the end of the document. That's what I did for this site initially. But it wasn't super ideal. [I've since made a PR to the Markdoc repo](https://github.com/markdoc/markdoc/pull/40) to provide support for footnotes in the Markdoc parser itself. Hopefully that will go through and get incorporated in near future releases. 🤞
 
-Third, there is the age-old engineering issue of trade-offs. I had some hesitation about incorporating a specific syntax into my fairly vanilla markdown files. To be sure, I had to make this choice when I chose MDX before too. But it is an important consideration, as you will start to get married to the specific syntax. For example, at the top of my blog posts, I use a [Markdoc partial](https://markdoc.io/docs/partials) to render the header of each post, so I can keep my code dry and not have to repeat this everywhere. But when viewing the document outside of this website, the syntax appears alien and not super fun to look at. If you value content as content - as readable text and not much else - then Markdoc is likely not for you.
+Third, there is the age-old engineering issue of trade-offs. I had some hesitation about incorporating a specific syntax into my fairly vanilla markdown files. To be sure, I had to make this choice when I chose MDX before too. But it is an important consideration, as you will start to get married to the specific syntax. For example, at the top of my blog posts, I use a [Markdoc partial](https://markdoc.io/docs/partials) to render the header of each post, so I can keep my code dry and not have to repeat this everywhere. But when viewing the document outside of this website, the syntax appears alien and not super fun to look at. If you value content _as content_ - as readable text and not much else - then Markdoc is likely not for you.
 
-![Example of partial Markdoc syntax within Markdown file](/public/images/partial-example.webp "Example of partial Markdoc syntax within Markdown file")
+Fourth, it's important to keep in mind what renderer you're going to use. JSX works great for static rendering because it renders well on the server. But [static rendering of native web components isn't well supported](https://lamplightdev.com/blog/2019/07/20/how-to-server-side-render-web-components/) because, well, those components rely on the actual browser window for operation. Accordingly, if you are worried about layout shifts that might occur between a statically rendered page and the time it takes for the web components to load and do their thing, you are likely better off [combining Markdoc with Next.JS](https://markdoc.io/docs/nextjs) or another such framework, and not using the basic [HTML renderer](https://markdoc.io/docs/examples/html) like I've done for this wee site here.
 
-Fourth, it's important to keep in mind what rendering target you're going to use. JSX works great for static rendering because it renders well on the server. But [static rendering of native web components isn't well supported](https://lamplightdev.com/blog/2019/07/20/how-to-server-side-render-web-components/) because, well, those components rely on the actual browser window for operation. Accordingly, if you are worried about layout shifts that might occur between a statically rendered page and the time it takes for the web components to load and do their thing, you are likely better off [combining Markdoc with Next.JS](https://markdoc.io/docs/nextjs) or another such framework, and not using the basic [HTML renderer](https://markdoc.io/docs/examples/html) like I've done for this wee site here.
-
-[^1]: Unlike [MDX](https://mdxjs.com/), you don't embed code or react components. It's more like the Liquid template language developed by Shopify.
+[^1]: Unlike [MDX](https://mdxjs.com/), you don't embed code or react components. It's more like the [Liquid template language](https://shopify.github.io/liquid/) developed by Shopify.
 [^2]: Note that you're not just confined to rendering semantic HTML tags. You can also render custom elements that correspond to your [web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components). And that's awesome. Because you can basically at that point get the benefit of both markdown for content authoring and interactive richness that comes with web components and the built in shadow dom.
+[^3]: The folks at Stripe maintaing Markdoc are quite responsive, so shoutout to them!

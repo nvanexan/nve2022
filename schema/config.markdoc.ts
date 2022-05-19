@@ -7,12 +7,14 @@ import { nav } from "./nav.markdoc";
 import { section } from "./section.markdoc";
 import { text } from "./text.markdoc";
 import { image } from "./image.markdoc";
+import { fence } from "./fence.markdoc";
 
 export const config = {
   nodes: {
     link: link,
     text: text,
     image: image,
+    fence: fence,
   },
   tags: {
     spacer,

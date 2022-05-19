@@ -13,13 +13,7 @@ Senior software developer and certified privacy professional (CIPP C/E). Helping
 
 - [Now](/now)
 - [Changelog](/changelog)
-
-{% spacer /%}
-
-## Latest Thoughts
-
-- [Markdoc](/posts/markdoc)
-- [Gemini](/posts/gemini)
+- [Writing](/writing)
 
 ## Contact
 

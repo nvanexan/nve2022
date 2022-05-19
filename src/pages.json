@@ -1,7 +1,8 @@
 {
+  "index": "[page]",
   "now": "[page]",
   "changelog": "[page]",
-  "index": "[page]",
-  "posts/gemini": "[page]",
-  "posts/markdoc": "[page]"
+  "writing": "[page]",
+  "posts/gemini": "[post]",
+  "posts/markdoc": "[post]"
 }
