@@ -207,10 +207,24 @@ ul,
 }
 
 img {
-  width: 640px;
+  max-width: 100%;
   height: auto;
-  min-height: 360px;
-  aspect-ratio: attr(width) / attr(height);
+}
+
+.image-container {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+}
+
+.image-container figcaption {
+  font-size: 12px;
+  opacity: 0.7;
+  margin: 12px 0;
+  text-align: center;
 }
 
 /* ---------------------------------- */
@@ -226,6 +240,18 @@ ul li:before {
   content: "–";
   display: inline-block;
   text-indent: calc(1rem * -1);
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+  padding-left: 16px;
+  line-height: var(--leading);
+}
+
+ol li::marker {
+  display: inline-block;
+  margin-right: 1rem;
 }
 
 /* ---------------------------------- */

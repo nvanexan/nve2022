@@ -19,7 +19,7 @@ The syntax for creating gemini content (gemtext) is very similar to markdown. An
 
 There are already many open source libraries for creating Gemini servers and clients.[^1] My favourite client[^2] is [Amfora](https://github.com/makeworld-the-better-one/amfora), a CLI. Here's me reading the [Hundred Rabbits](https://100r.co/) wiki on Amfora.
 
-![Hundred Rabbits on Gemini Protocol](/public/images/amfora.webp) {% width=640 height=508 %}
+![Hundred Rabbits on Gemini Protocol](/public/images/amfora.webp "Hundred Rabbits on Gemini Protocol")
 
 Gemini appeals to me. I'm not sure why. It's not usable the way the web is; it takes effort to learn it. And content isn't very easily discoverable. But I think that's maybe the appeal. There's a little community of people here that also like the idea of a small internet that provides a more defined space for thoughts and words. People that also write their own CLIs, take notes in vim, and still use pgp.[^3] It's nice.
 

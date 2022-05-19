@@ -5,6 +5,14 @@
 // customElements.define("nve-spacer", Spacer);
 // customElements.define("nve-meta", Meta);
 
+function debounce(func: any, time: number = 100) {
+  let timer: any;
+  return function (event: any) {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(func, time, event);
+  };
+}
+
 const mediaQuery = window.matchMedia("(max-width: 1024px)");
 
 const images = document.querySelectorAll("article img");
@@ -64,5 +72,5 @@ function setFootnotePositions() {
 const intervalId = setInterval(checkImagesLoaded, 10);
 
 if (fnContainer) {
-  window.addEventListener("resize", setFootnotePositions);
+  window.addEventListener("resize", debounce(setFootnotePositions, 150));
 }
