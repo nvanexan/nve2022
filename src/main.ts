@@ -5,6 +5,14 @@
 // customElements.define("nve-spacer", Spacer);
 // customElements.define("nve-meta", Meta);
 
+function debounce(func: any, time: number = 100) {
+  let timer: any;
+  return function (event: any) {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(func, time, event);
+  };
+}
+
 const mediaQuery = window.matchMedia("(max-width: 1024px)");
 
 const images = document.querySelectorAll("article img");
@@ -26,7 +34,7 @@ function checkImagesLoaded() {
   timesRun++;
 }
 
-const fnContainer = document.getElementById("footnotes");
+const fnContainer = document.querySelector(".footnotes");
 
 function setFootnotePositions() {
   if (fnContainer) {
@@ -38,11 +46,11 @@ function setFootnotePositions() {
         "footnotes footnotes-js"
       );
     }
-    const footnotes = document.querySelectorAll("#footnotes p");
+    const footnotes = document.querySelectorAll(".footnote-item");
     footnotes.forEach((elem) => {
-      const id = elem.id.replace("fn-", "");
-      const fnRef = document.getElementById(`fnref-${id}`);
-      const containerTop = fnRef?.parentElement?.offsetTop;
+      const id = elem.id.replace("fn", "");
+      const fnRef = document.getElementById(`fnref${id}`);
+      const containerTop = fnRef?.parentElement?.parentElement?.offsetTop;
       let top;
       if (!elem.previousElementSibling) {
         top = containerTop;
@@ -64,5 +72,5 @@ function setFootnotePositions() {
 const intervalId = setInterval(checkImagesLoaded, 10);
 
 if (fnContainer) {
-  window.addEventListener("resize", setFootnotePositions);
+  window.addEventListener("resize", debounce(setFootnotePositions, 150));
 }

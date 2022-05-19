@@ -207,10 +207,24 @@ ul,
 }
 
 img {
-  width: 640px;
+  max-width: 100%;
   height: auto;
-  min-height: 360px;
-  aspect-ratio: attr(width) / attr(height);
+}
+
+.image-container {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+}
+
+.image-container figcaption {
+  font-size: 12px;
+  opacity: 0.7;
+  margin: 12px 0;
+  text-align: center;
 }
 
 /* ---------------------------------- */
@@ -226,6 +240,18 @@ ul li:before {
   content: "–";
   display: inline-block;
   text-indent: calc(1rem * -1);
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+  padding-left: 16px;
+  line-height: var(--leading);
+}
+
+ol li::marker {
+  display: inline-block;
+  margin-right: 1rem;
 }
 
 /* ---------------------------------- */
@@ -315,7 +341,13 @@ sup a:hover {
   }
 }
 
-.footnotes p {
+.footnotes ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footnotes li {
   font-size: 14px;
   line-height: 22px;
   color: var(--mono9);
@@ -327,11 +359,16 @@ sup a:hover {
   transition: opacity 0.3s ease;
 }
 
-.footnotes p:hover {
+.footnotes li p {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.footnotes li:hover {
   opacity: 1;
 }
 
-.footnotes p:before {
+.footnotes li:before {
   content: counter(item) ". ";
   counter-increment: item 1;
   position: absolute;
@@ -339,10 +376,10 @@ sup a:hover {
   font-size: inherit;
   font-weight: 700;
   font-size: smaller;
-  transform: translate(-12px, 1px);
+  transform: translate(-12px, 0.5px);
 }
 
-.footnotes p a.footnote-backref {
+.footnotes li a.footnote-anchor {
   margin-left: 6px;
   display: inline-block;
   background-image: none;
@@ -365,11 +402,11 @@ have to inline all of these styles. */
   max-width: 192px !important;
 }
 
-.footnotes-js p {
+.footnotes-js li {
   position: absolute !important;
 }
 
-.footnotes-js p a.footnote-backref {
+.footnotes-js li a.footnote-anchor {
   display: none !important;
 }
 
@@ -377,7 +414,7 @@ have to inline all of these styles. */
 
 a,
 .underline,
-.footnote-backref {
+.footnote-anchor {
   color: var(--gray11);
   text-decoration: none;
   background-image: linear-gradient(var(--gray11), var(--gray11));
@@ -390,7 +427,7 @@ a,
 
 a:hover,
 .underline:hover,
-.footnote-backref:hover {
+.footnote-anchor:hover {
   color: var(--fg);
   background-size: 0% 1px;
 }

@@ -16,8 +16,12 @@ Senior software developer and certified privacy professional (CIPP C/E). Helping
 
 {% spacer /%}
 
+## Latest Thoughts
+
+- [Markdoc](/posts/markdoc)
+- [Gemini](/posts/gemini)
+
 ## Contact
 
 - Email: [nick@vanexan.ca](mailto:nick@vanexan.ca)
-- Phone: [647-371-5515](tel:1-647-371-5515)
 - Twitter: [@nvanexan](https://twitter.com/nvanexan)

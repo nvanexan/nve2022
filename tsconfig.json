@@ -11,7 +11,7 @@
     // "disableReferencedProjectLoad": true,             /* Reduce the number of projects loaded automatically by TypeScript. */
 
     /* Language and Environment */
-    "target": "es2019" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+    "target": "es2021" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
     "lib": [
       "es2021",
       "dom"
@@ -24,11 +24,11 @@
     // "jsxImportSource": "",                            /* Specify module specifier used to import the JSX factory functions when using `jsx: react-jsx*`.` */
     // "reactNamespace": "",                             /* Specify the object invoked for `createElement`. This only applies when targeting `react` JSX emit. */
     // "noLib": true,                                    /* Disable including any library files, including the default lib.d.ts. */
-    "useDefineForClassFields": false /* Emit ECMAScript-standard-compliant class fields. */,
+    // "useDefineForClassFields": false /* Emit ECMAScript-standard-compliant class fields. */,
 
     /* Modules */
-    "module": "NodeNext" /* Specify what module code is generated. */,
-    "rootDir": "./" /* Specify the root folder within your source files. */,
+    "module": "commonjs" /* Specify what module code is generated. */,
+    // "rootDir": "./" /* Specify the root folder within your source files. */,
     "moduleResolution": "node" /* Specify how TypeScript looks up a file from a given module specifier. */,
     // "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
     // "paths": {},                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
@@ -101,5 +101,6 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
-  "include": ["src"]
+  "include": ["src", "lib"],
+  "exclude": ["node_modules"]
 }

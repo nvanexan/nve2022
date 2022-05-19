@@ -6,14 +6,12 @@ import { link } from "./link.markdoc";
 import { nav } from "./nav.markdoc";
 import { section } from "./section.markdoc";
 import { text } from "./text.markdoc";
-import { paragraph } from "./paragraph.markdoc";
 import { image } from "./image.markdoc";
 
 export const config = {
   nodes: {
     link: link,
     text: text,
-    paragraph: paragraph,
     image: image,
   },
   tags: {
