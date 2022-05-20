@@ -1,5 +1,5 @@
 ---
-seo_title: "Gemini"
+seo_title: "Gemini | Nick Van Exan"
 title: "Gemini"
 author: "Nick Van Exan"
 date: "2021-11-19T22:32:27Z"
