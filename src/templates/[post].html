@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <title>{{ seo_title }}</title>
+    <meta name="description" content="{{ seo_description }}" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@nvanexan" />
+    <meta name="twitter:creator" content="@nvanexan" />
+    <meta name="twitter:title" content="{{ seo_title }}" />
+    <meta name="twitter:description" content="{{ seo_description }}" />
+    <meta name="twitter:image" content="{{ twitter_social_image }}" } />
+
+    <!-- OpenGraph -->
+    <meta property="og:url" content="{{ seo_url }}" />
+    <meta property="og:title" content="{{ seo_title }}" />
+    <meta property="og:description" content="{{ seo_description }}" />
+    <meta property="og:image" content="{{ social_image }}" />
+
+    <!-- Third party fonts -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap"
+    /> -->
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz@1,6..72&display=swap"
+      rel="stylesheet"
+    /> -->
+
+    <!-- Styles -->
+    <style>
+      @font-face {
+        font-family: "Sohne";
+        src: url("/public/fonts/soehne-buch.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: fallback;
+      }
+    </style>
+    <!-- {{ SERVER_STYLES }} -->
+    <link rel="stylesheet" href="/styles/global.css" />
+    <link rel="stylesheet" href="/styles/prism-theme.css" />
+
+    <!-- Icons -->
+    <link rel="icon" href="{{ base_url }}/public/nve-icon.png" />
+    <link
+      href="{{ base_url }}/public/nve-icon.png"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+
+    <!-- {{ PREFETCH_ROUTES }} -->
+  </head>
+  <body>
+    <div class="app">{{ CONTENT }}</div>
+    <script type="module" src="/main.js"></script>
+    <script src="/public/prism.js"></script>
+  </body>
+</html>

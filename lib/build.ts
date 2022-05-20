@@ -47,7 +47,7 @@ async function injectCss(html: string) {
         extension: "html",
       },
     ],
-    css: ["src/styles/global.css"],
+    css: ["src/styles/global.css", "src/styles/prism-theme.css"],
     variables: true,
   });
 

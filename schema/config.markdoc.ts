@@ -8,6 +8,7 @@ import { section } from "./section.markdoc";
 import { text } from "./text.markdoc";
 import { paragraph } from "./paragraph.markdoc";
 import { image } from "./image.markdoc";
+import { fence } from "./fence.markdoc";
 
 export const config = {
   nodes: {
@@ -15,6 +16,7 @@ export const config = {
     text: text,
     paragraph: paragraph,
     image: image,
+    fence: fence,
   },
   tags: {
     spacer,

@@ -2,5 +2,7 @@
   "now": "[page]",
   "changelog": "[page]",
   "index": "[page]",
-  "posts/gemini": "[page]"
+  "writing": "[page]",
+  "posts/gemini": "[post]",
+  "posts/markdoc": "[post]"
 }
