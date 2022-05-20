@@ -17,11 +17,11 @@ There is no javascript in Gemini. No trackers. No cookies. No social networks. N
 
 The syntax for creating gemini content (gemtext) is very similar to markdown. And the output is primarily just text.
 
-There are already many open source libraries for creating Gemini servers and clients.[^1] My favourite client[^2] is [Amfora](https://github.com/makeworld-the-better-one/amfora), a CLI. Here's me reading the [Hundred Rabbits](https://100r.co/) wiki on Amfora.
+There are already many open source libraries for creating Gemini servers and clients.[^1] My favourite client is [Amfora](https://github.com/makeworld-the-better-one/amfora), a CLI. Here's me reading the [Hundred Rabbits](https://100r.co/) wiki on Amfora.
 
 ![Hundred Rabbits on Gemini Protocol](/public/images/amfora.webp "Hundred Rabbits on Gemini Protocol")
 
-Gemini appeals to me. I'm not sure why. It's not usable the way the web is; it takes effort to learn it. And content isn't very easily discoverable. But I think that's maybe the appeal. There's a little community of people here that also like the idea of a small internet that provides a more defined space for thoughts and words. People that also write their own CLIs, take notes in vim, and still use pgp.[^3] It's nice.
+Gemini appeals to me. I'm not sure why. It's not usable the way the web is; it takes effort to learn it. And content isn't very easily discoverable. But I think that's maybe the appeal. There's a little community of people here that also like the idea of a small internet that provides a more defined space for thoughts and words. People that also write their own CLIs, take notes in vim, and still use pgp. It's nice.
 
 I feel like with the Gemini protocol I've entered a kind of electronic speakeasy. It's cozy here.
 
@@ -30,9 +30,5 @@ It reminds me of the internet I loved as a teenager. I'm keen to hang out here f
 {% section #footnotes .footnotes %}
 
 [^1]: You can find a lot of good ones [here](https://gemini.circumlunar.space/software/), and they're not all CLIs. There's clients for multiple platforms, including iOS.
-
-[^2]: this is a second footnote
-
-[^3]: this is a third footnote
 
 {% /section %}
