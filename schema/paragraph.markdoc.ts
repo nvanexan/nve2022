@@ -1,7 +1,7 @@
 import { Config, Node, RenderableTreeNode, Tag } from "@markdoc/markdoc";
 
 const endNotePattern = /\[\^(\d+)\]: /gm;
-const inlineFnPattern = /\[\^(\d+)\] /gm;
+const inlineFnPattern = /\[\^(\d+)\](?!:)/gm;
 
 function getFootnoteId(nodeChildren: RenderableTreeNode[]) {
   let id;
@@ -24,8 +24,8 @@ function getFootnoteId(nodeChildren: RenderableTreeNode[]) {
 
 function parseFootnotes(str: string) {
   return str
-    .replace(inlineFnPattern, `,$&, `)
-    .split(",")
+    .replace(inlineFnPattern, `***$&*** `)
+    .split("***")
     .flatMap((str) => {
       const matches = str.match(inlineFnPattern);
       if (!matches) return str;

@@ -50,7 +50,7 @@ function setFootnotePositions() {
     footnotes.forEach((elem) => {
       const id = elem.id.replace("fn-", "");
       const fnRef = document.getElementById(`fnref-${id}`);
-      const containerTop = fnRef?.parentElement?.offsetTop;
+      let containerTop = fnRef?.parentElement?.offsetTop;
       let top;
       if (!elem.previousElementSibling) {
         top = containerTop;
