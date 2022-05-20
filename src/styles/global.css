@@ -79,9 +79,9 @@
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --bg: var(--gray0);
+    --bg: #0d1117;
     --fg: var(--gray12);
-    --prism-bg: #111111;
+    --prism-bg: #161b22;
     --highlight-bg: var(--selection);
     --link: var(--gray11);
   }
