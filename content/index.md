@@ -9,7 +9,7 @@ summary: "Current areas of focus + interests"
 
 # Nick Van Exan
 
-Senior software developer and certified privacy professional (CIPP C/E). Helping organizations build _ethical_ products and services.
+Software developer and certified privacy professional (CIPP C/E). Helping organizations build _ethical_ products and services.
 
 - [Now](/now)
 - [Changelog](/changelog)
@@ -18,5 +18,4 @@ Senior software developer and certified privacy professional (CIPP C/E). Helping
 ## Contact
 
 - Email: [nick@vanexan.ca](mailto:nick@vanexan.ca)
-- Phone: [647-371-5515](tel:1-647-371-5515)
 - Twitter: [@nvanexan](https://twitter.com/nvanexan)

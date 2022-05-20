@@ -100,7 +100,7 @@ I can now reuse the `{% section %}` tag anywhere in my Markdown documents. And y
 
 You can also [conditionally render section blocks](https://markdoc.io/docs/tags#built-in-tags), use [partials](https://markdoc.io/docs/partials) to DRY out your Markdown content that is repetitive across files, define and use [variables](https://markdoc.io/docs/variables), and [so on](https://markdoc.io/docs/getting-started). 
 
-## Rewriting My Site & Performance Gains
+## Replacing Next.JS with Markdoc + Custom Build for My Site & Performance Gains
 
 I spent last weekend re-writing my site to remove Next.JS (and thus React) and make use of Markdoc. I cut a [fresh repo](https://github.com/nvanexan/nve2022). I built a simple build script in TypeScript which takes my Markdown files, templated with Markdoc, and renders them to static html pages using the Markdoc HTML renderer. 
 
@@ -116,7 +116,7 @@ The performance results were fun. Some comparisons of [Lighthouse](https://devel
 
 ![Custom Markdoc version - mobile](/public/images/new-site-mobile.webp "Custom Markdoc version - mobile")
 
-## Gotchas and Take-Aways
+## Lessons Learned
 
 I learned some lessons along my journey.
 
@@ -124,7 +124,9 @@ First, not all Markdown tokens are supported by Markdoc. Footnotes, for example,
 
 Second, there is the age-old engineering issue of trade-offs. I had some hesitation about incorporating a specific syntax into my fairly vanilla Markdown files. To be sure, I had to make this choice when I chose MDX before too. But it is an important consideration, as you will start to get married to the specific syntax. For example, at the top of my blog posts, I use a [Markdoc partial](https://markdoc.io/docs/partials) to render the header of each post, so I can keep my code dry and not have to repeat this everywhere. But when viewing the document outside of this website, the syntax appears alien and not super fun to look at. If you value _clean_ and _portable_ Markdown (_i.e._ easily readable / parseable / transferrable across apps and other places that accept Markdown) then Markdoc is likely not for you.
 
-Third, it's important to keep in mind what renderer you're going to use. In my case I chose render HTML instead of JSX, so I could use basic HTML and then add web components as needed. But [static rendering of native web components isn't well supported](https://lamplightdev.com/blog/2019/07/20/how-to-server-side-render-web-components/) because, well, those components rely on the actual browser window for operation. Accordingly, you may wish to [combine Markdoc with Next.JS](https://markdoc.io/docs/nextjs) or [React](https://markdoc.io/docs/examples/react) if it better fits your use case.
+Third, it's important to keep in mind what renderer you're going to use. In my case I chose render HTML instead of JSX, so I could use basic HTML and then add web components as needed. But [static rendering of native web components isn't well supported](https://lamplightdev.com/blog/2019/07/20/how-to-server-side-render-web-components/) because, well, those components rely on the actual browser window for operation. So there's more cognitive effort required to do static snd progressive enhancement with web components to avoid layout shifts, etc. Accordingly, you may wish to [combine Markdoc with Next.JS](https://markdoc.io/docs/nextjs) or [React](https://markdoc.io/docs/examples/react) if it better fits your use case.
+
+## Concluding thoughts 
 
 Honestly, though, [Markdoc](https://markdoc.io) is super great. If you've ever wanted your Markdown to support things like templating, conditionals, variables, etc., Markdoc makes it dead easy to support and implement, with a nice API for extending and building your own tags.
 
