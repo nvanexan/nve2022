@@ -65,6 +65,9 @@
   --grayA11: hsl(0 0% 100%/0.592);
   --grayA12: hsl(0 0% 100%/0.923);
 
+  --blue: #4895f4;
+  --link: var(--gray9);
+
   --selection: var(--grayA4);
 
   --spacer-y: 8;
@@ -80,6 +83,7 @@
     --fg: var(--gray12);
     --prism-bg: #111111;
     --highlight-bg: var(--selection);
+    --link: var(--gray11);
   }
 }
 
@@ -409,9 +413,9 @@ have to inline all of these styles. */
 a,
 .underline,
 .footnote-backref {
-  color: var(--gray11);
+  color: var(--link);
   text-decoration: none;
-  background-image: linear-gradient(var(--gray11), var(--gray11));
+  background-image: linear-gradient(var(--link), var(--link));
   background-position: 0% 100%;
   background-repeat: no-repeat;
   background-size: 100% 1px;
@@ -424,4 +428,8 @@ a:hover,
 .footnote-backref:hover {
   color: var(--fg);
   background-size: 0% 1px;
+}
+
+.post {
+  --link: var(--blue);
 }
