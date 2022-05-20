@@ -128,7 +128,7 @@ Third, it's important to keep in mind what renderer you're going to use. In my c
 
 ## Concluding thoughts 
 
-[Markdoc](https://markdoc.io) is super great. If you've ever wanted your Markdown to support things like templating, conditionals, variables, etc., Markdoc makes it dead easy to support and implement, with a nice API for extending and building your own tags.
+[Markdoc](https://markdoc.io) is super great. And powerful. If you've ever wanted your Markdown to support things like templating, conditionals, variables, etc., Markdoc makes it dead easy to support and implement, with a nice API for extending and building your own tags.
 
 I'm going to keep experimenting with it, and contributing to it too. I think it has a lot of value and promise.
 
