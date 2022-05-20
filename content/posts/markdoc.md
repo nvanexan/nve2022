@@ -15,7 +15,7 @@ For the past couple of years I've used [Next.JS](https://nextjs.org/) + [MDX](ht
 
 Markdown is great, and you can use it to express quite a bit, but there's always been a "last mile" wherein you need something else to get your Markdown files transformed into the HTML needed to match your design and interactivity goals. And it's here - precisely in this last mile - that Markdoc fills an important void.
 
-## What Makes Markdoc Unique
+## What makes Markdoc unique
 
 The folks at Stripe have a good description of what makes Markdoc unique [here](https://markdoc.io/docs/overview). The highlights for me were:
 
@@ -100,7 +100,7 @@ I can now reuse the `{% section %}` tag anywhere in my Markdown documents. And y
 
 You can also [conditionally render section blocks](https://markdoc.io/docs/tags#built-in-tags), use [partials](https://markdoc.io/docs/partials) to DRY out your Markdown content that is repetitive across files, define and use [variables](https://markdoc.io/docs/variables), and [so on](https://markdoc.io/docs/getting-started). 
 
-## Replacing Next.JS with Markdoc + Custom Build for My Site & Performance Gains
+## Performance gains using Markdoc + custom build 
 
 I spent last weekend re-writing my site to remove Next.JS (and thus React) and make use of Markdoc. I cut a [fresh repo](https://github.com/nvanexan/nve2022). I built a simple build script in TypeScript which takes my Markdown files, templated with Markdoc, and renders them to static html pages using the Markdoc HTML renderer. 
 
@@ -116,7 +116,7 @@ The performance results were fun. Some comparisons of [Lighthouse](https://devel
 
 ![Custom Markdoc version - mobile](/public/images/new-site-mobile.webp "Custom Markdoc version - mobile")
 
-## Lessons Learned
+## Lessons learned
 
 I learned some lessons along my journey.
 
