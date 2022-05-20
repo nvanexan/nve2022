@@ -30,7 +30,9 @@ It reminds me of the internet I loved as a teenager. I'm keen to hang out here f
 {% section #footnotes .footnotes %}
 
 [^1]: You can find a lot of good ones [here](https://gemini.circumlunar.space/software/), and they're not all CLIs. There's clients for multiple platforms, including iOS.
+
 [^2]: this is a second footnote
+
 [^3]: this is a third footnote
 
 {% /section %}
