@@ -12,7 +12,7 @@ export const fence = {
     const attributes = node.transformAttributes(config);
     attributes.class = `language-${attributes["data-language"]}`;
     const children =
-      node.attributes.language === "markdoc"
+      node.attributes.language === "liquid"
         ? node.attributes.content
         : node.transformChildren(config);
 
