@@ -163,7 +163,7 @@ article > :where(h1, h2, h3, h4, h5, h6) {
   margin-bottom: 32px;
 }
 
-article > * {
+article > :where(p, ul, ol, section) {
   margin-bottom: 28px !important;
 }
 
@@ -268,7 +268,7 @@ ol li::marker {
   right: calc(var(--content-width) + var(--side));
   width: calc(var(--page-margin) - var(--side) - 48px);
   max-width: 192px;
-  margin-top: -84px;
+  margin-top: -56px;
   margin-bottom: 0;
 }
 
