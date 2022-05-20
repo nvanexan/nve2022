@@ -227,6 +227,11 @@ img {
   text-align: center;
 }
 
+.writing-section li em {
+  margin-left: 1rem;
+  font-size: 0.9em;
+}
+
 /* ---------------------------------- */
 
 ul {
