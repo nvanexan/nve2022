@@ -11,7 +11,7 @@ summary: "Using Markdoc for static site generation"
 
 Last week I discovered [Markdoc](https://markdoc.io/). It's a Markdown parser and authoring framework by the folks at [Stripe](https://stripe.com) that allows you to _compose_ content in a fully declarative way.[^1] I love the philosophy and ambition. 
 
-For the past couple of years I've used [Next.JS](https://nextjs.org/) + [MDX](https://mdxjs.com/) to render my site. This worked well, and I thought the combination of static site rendering and then hydration with React was awesome. But over time, my site's style has become more and more stripped down, inspired by folks like [Hundred Rabbits](https://100r.co) and music heroes [Japandroids](https://japandroids.com/). And as a result, I've learned that I don't need or want React at all. All I really need is some HTML and CSS with a sprinkle of JS here and there. I got pretty close to this on the last iteration of my site, but ultimately needed MDX and Next.JS to help shape my Markdown into my design. 
+For the past couple of years I've used [Next.JS](https://nextjs.org/) + [MDX](https://mdxjs.com/) to render my site. This worked well, and I thought the combination of static site rendering and then hydration with React was awesome. But over time, my site's style has become more and more stripped down, inspired by folks like [Hundred Rabbits](https://100r.co) and music heroes [Japandroids](https://japandroids.com/). And as a result, I've learned that I don't need or want React at all. All I really need is some HTML and CSS with a sprinkle of JS here and there. I got pretty close to this on the last iteration of my site, but ultimately needed MDX and Next.JS to help shape my Markdown into a design. 
 
 Markdown is great, and you can use it to express quite a bit, but there's always been a "last mile" wherein you need something else to get your Markdown files transformed into the HTML needed to match your design and interactivity goals. And it's here - precisely in this last mile - that Markdoc fills a unique and important void.
 
@@ -56,11 +56,11 @@ export const section = {
 };
 ```
 
-How does Markdoc join these two to create HTML? It's very elegantly simple. There's three core components: (1) a parser; (2) a transformer; (3) a renderer. You pass your content, and a config file with your custom Tag schemas, into the parser. The parser creates an abstract syntax tree, which you then process through a transformer method into objects the renderer can understand, and then the renderer renders the desired output (HTML, JSX, etc.). 
+How does Markdoc join these two to create HTML? It's simple. There's three core components: (1) a parser; (2) a transformer; (3) a renderer. You pass your content, and optionally a config file with your custom Tag schemas, into the parser. The parser creates an [abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree), which you then process through a transformer method into objects the renderer can understand, and then the renderer renders the desired output (HTML, JSX, etc.). Here's a quick example from the Markdoc docs:
 
 ```javascript
 const ast = Markdoc.parse(content);
-const content = Markdoc.transform(ast, /* config */);  // the config is where you can provide definitions for custom tags
+const content = Markdoc.transform(ast, /* config */);
 
 const html = Markdoc.renderers.html(content);
 ```
@@ -75,13 +75,13 @@ And that's basically it. Applied to the example above, the end result is a `<sec
 
 You can certainly go further. For example, instead of rendering a simple `<section>` element, you can render a [web component](https://developer.mozilla.org/en-US/docs/Web/Web_Components), complete with its own UI logic and shadow dom (once the document loads).
 
-You can also [conditionally render section blocks](https://markdoc.io/docs/tags#built-in-tags), use [partials](https://markdoc.io/docs/partials) to DRY out your Markdown content that is repetitive across files, define and use [variables](https://markdoc.io/docs/variables), and [so on](https://markdoc.io/docs/getting-started). But to me, the beauty of the library is in its simplicity: three steps - parse, transform, render. And away we go!
+You can also [conditionally render section blocks](https://markdoc.io/docs/tags#built-in-tags), use [partials](https://markdoc.io/docs/partials) to DRY out your Markdown content that is repetitive across files, define and use [variables](https://markdoc.io/docs/variables), and [so on](https://markdoc.io/docs/getting-started). 
 
-
+But to me, the beauty of the library is in its simplicity: three steps - parse, transform, render. And away we go!
 
 ## Rewriting My Site & Performance Gains
 
-I spent last weekend re-writing my site to remove Next.JS (and thus React) and make use of Markdoc. I [cut a fresh repo](https://github.com/nvanexan/nve2022). I built a simple build script in TypeScript which takes my markdown files, templated with Markdoc, and renders them to static html pages using the Markdoc HTML renderer. 
+I spent last weekend re-writing my site to remove Next.JS (and thus React) and make use of Markdoc. I cut a [fresh repo](https://github.com/nvanexan/nve2022). I built a simple build script in TypeScript which takes my markdown files, templated with Markdoc, and renders them to static html pages using the Markdoc HTML renderer. 
 
 There's a bit more to it than that, of course. I had to add support for CSS parsing, so critical styles could be injected into the html files before the global.css loaded, frontmatter parsing for meta tags for SEO reasons, etc. But by the end of the weekend, I had succeeded in removing React and creating a super lightweight site of basically just HTML and CSS.
 
@@ -101,7 +101,7 @@ There were some gotchas I encountered in re-writing my site.
 
 First, not all Markdown tokens are supported by Markdoc. Footnotes, for example, are not supported at the time of writing. You can definitely create a custom paragraph tag that sort of hacks around this problem, and builds footnote refs in the paragraph and appends a list of footnote items to the end of the document. That's what I did for this site at the time of writing. But it wasn't super ideal. [I've since made a PR to the Markdoc repo](https://github.com/markdoc/markdoc/pull/40) to provide support for footnotes in the Markdoc parser itself. Hopefully that will go through and get incorporated in near future releases.[^3] 🤞
 
-Second, there is the age-old engineering issue of trade-offs. I had some hesitation about incorporating a specific syntax into my fairly vanilla markdown files. To be sure, I had to make this choice when I chose MDX before too. But it is an important consideration, as you will start to get married to the specific syntax. For example, at the top of my blog posts, I use a [Markdoc partial](https://markdoc.io/docs/partials) to render the header of each post, so I can keep my code dry and not have to repeat this everywhere. But when viewing the document outside of this website, the syntax appears alien and not super fun to look at. If you value clean markdown and content _as content_ - as readable text and not much else - then Markdoc is likely not for you.
+Second, there is the age-old engineering issue of trade-offs. I had some hesitation about incorporating a specific syntax into my fairly vanilla markdown files. To be sure, I had to make this choice when I chose MDX before too. But it is an important consideration, as you will start to get married to the specific syntax. For example, at the top of my blog posts, I use a [Markdoc partial](https://markdoc.io/docs/partials) to render the header of each post, so I can keep my code dry and not have to repeat this everywhere. But when viewing the document outside of this website, the syntax appears alien and not super fun to look at. If you value _clean_ and _portable_ Markdown (_i.e._ easily readable / parseable / transferrable across apps and other places that accept Markdown) then Markdoc is likely not for you.
 
 Third, it's important to keep in mind what renderer you're going to use. JSX works great for static rendering because it renders well on the server. But [static rendering of native web components isn't well supported](https://lamplightdev.com/blog/2019/07/20/how-to-server-side-render-web-components/) because, well, those components rely on the actual browser window for operation. Accordingly, if you are worried about layout shifts that might occur between a statically rendered page and the time it takes for the web components to load and do their thing, you are likely better off [combining Markdoc with Next.JS](https://markdoc.io/docs/nextjs) or another such framework, and not using the basic [HTML renderer](https://markdoc.io/docs/examples/html) like I've done for this wee site here.
 
