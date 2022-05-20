@@ -9,5 +9,5 @@ summary: "Some thoughts on sundry topics"
 
 {% partial file="article-title.md" /%}
 
-- [Markdoc](/posts/markdoc)
-- [Gemini](/posts/gemini)
+- [Markdoc](/posts/markdoc) _(2022-05-19)_
+- [Gemini](/posts/gemini) _(2021-11-19)_
