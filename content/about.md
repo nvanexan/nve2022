@@ -11,7 +11,7 @@ summary: "A few words about me"
 
 Heya 👋, I'm Nick.
 
-I'm a software developer and data protection consultant (CIPP C/E). I live in Toronto but work virtually across a few time zones. 
+I'm an independent software developer and data protection consultant (CIPP C/E). I live in Toronto but work virtually across a few time zones. 
 
 I've been writing code for about 20 years, since I was a teenager. My early days were focused on Flash and building innovative UIs with ActionScript. My heroes at the time were folks like [Joshua Davis](https://joshuadavis.com/), [Hillman Curtis](https://en.wikipedia.org/wiki/Hillman_Curtis), [James Paterson (Presstube)](https://twitter.com/presstube) and [Amit Pitaru](https://pitaru.com/). I won a [SXSW Web Award](https://www.sxsw.com/awards/) in 2004 for my work at the time. I couldn't attend because I was still in school and had exams. 
 
