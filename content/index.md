@@ -11,9 +11,23 @@ summary: "Current areas of focus + interests"
 
 Software developer and certified privacy professional (CIPP C/E). Helping organizations build ethical products and services people _trust_.
 
+{% section .index-links %}
+
+{% section %}
+
 - [Now](/now)
 - [Changelog](/changelog)
+
+{% /section %}
+
+{% section %}
+
 - [Writing](/writing)
+- [About](/about)
+
+{% /section %}
+
+{% /section %}
 
 ## Contact
 
