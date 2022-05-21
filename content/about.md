@@ -22,7 +22,7 @@ In 2015, law school debts paid off and tired of fighting with people for a livin
 In 2017, my experience as a software developer and knowledge of privacy law took me to [Hootsuite](https://hootsuite.com/), where I helped lead the development of Hootsuite's data protection and GDPR compliance strategy. I learned a lot about change management across multiple teams at a large and high growth startup, and came away with a lot of lessons about how privacy should work at scale. 
 
 
-Today I split my time about 80-20% between software engineering and privacy consulting. On the engineering side, I'm what you'd probably call a senior full-stack JavaScript (TypeScript now) developer. I'm fluent in the front end of the "stack", but have also spent time building dev toools, APIs and microservices that run on Node. On the privacy side, I am what you might call a "privacy engineer". I am happy to advise legal departments who are in their infancy of setting up a privacy program, but my biggest value add is more as a translator between Legal and IT / Engineering.
+Today I split my time about 80-20% between software engineering and privacy consulting. On the engineering side, I'm what you'd probably call a senior full-stack JavaScript /TypeScript developer. I'm fluent in the front end of the "stack", but have also spent time building dev tools, APIs and microservices that run on Node. On the privacy side, I am what you might call a "privacy engineer". I am happy to advise legal departments who are in their infancy of setting up a privacy program, but my biggest value add is more as a translator between Legal and IT / Engineering.
 
 In my free time, I like to hang out with my dog, George, run long distances, and contribute to open source software.
 
