@@ -15,7 +15,7 @@ This is the only equation in physics that gives time its arrow, according to Mar
 
 > The fact that entropy has been low in the past leads to an important fact that is ubiquitous and crucial for the difference between past and future: the past leaves traces of itself in the present.[^1]
 
-A couple of key points to contemplate here:
+I read this passage in Rovelli's [The Order of Time](https://www.penguinrandomhouse.com/books/551483/the-order-of-time-by-carlo-rovelli/) and it's sort of stuck with me, like inception. I'm not sure why. But there's a couple of interesting ideas to contemplate here for me I guess:
 
 1. Our present isn't just "informed" by our past. It contains it.
 2. The arrow of time is a gradual disordering of previously more particularized states.
