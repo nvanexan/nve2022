@@ -19,7 +19,7 @@ Today I'm what you'd probably call a senior full-stack JavaScript /TypeScript de
 
 I am also a certified privacy professional for Europe and Canada and a member of the International Association of Privacy Professionals (IAPP). I advise companies on matters related to privacy engineering, such as architectures for enabling data subject rights, and related compliance goals.
 
-In my free time, I like to hang out with my dog, George, run long distances, and contribute to open source software. I love coffee, live music, and [Japandroids](https://japandroids.com/).
+In my free time, I like to hang out with my dog, George, run long distances, watch live music and contribute to open source software. 
 
 ## Companies I've worked with
 
