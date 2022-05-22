@@ -13,5 +13,6 @@ summary: "Some thoughts on sundry topics"
 
 - [Markdoc](/posts/markdoc) 
 - [Gemini](/posts/gemini) 
+- [Entropy](/posts/entropy)
 
 {% /section %}
