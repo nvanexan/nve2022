@@ -1,5 +1,5 @@
 ---
-seo_title: "Entropy
+seo_title: "Entropy"
 title: "Entropy"
 author: "Nick Van Exan"
 date: "2021-09-12T22:32:27Z"
