@@ -7,6 +7,8 @@ social_image: ""
 summary: "Entropy, the order of time, and the value of kindness."
 ---
 
+{% partial file="article-title.md" /%}
+
 > ΔS≥0
 
 This is the equation describing the second law of thermodynamics. It tells us that heat passes from hot bodies to cold ones, never the other way around. S in this equation denotes entropy: a thermodynamic quantity representing the unavailability of a system's thermal energy for conversion into mechanical work, often interpreted as the degree of disorder or randomness in a closed system.
