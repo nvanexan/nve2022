@@ -11,8 +11,8 @@ summary: "Some thoughts on sundry topics"
 
 {% section .writing-list %}
 
-- [Markdoc](/posts/markdoc) 
-- [Gemini](/posts/gemini) 
-- [Entropy](/posts/entropy)
+- [Markdoc](/posts/markdoc) _(2022-05-19)_
+- [Gemini](/posts/gemini) _(2021-11-19)_
+- [Entropy](/posts/entropy) _(2021-09-12)_
 
 {% /section %}
