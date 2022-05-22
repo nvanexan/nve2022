@@ -138,6 +138,6 @@ I'm going to keep experimenting with it, and contributing to it too. I think it 
 
 [^2]: Note that you're not just confined to rendering semantic HTML tags. You can also render custom elements that correspond to your [web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components). And that's awesome. Because you can basically at that point get the benefit of both Markdown for content authoring and interactive richness that comes with web components and the built in shadow dom.
 
-[^3]: The folks at Stripe who are maintaing Markdoc are quite responsives. Shoutout to them, and hat tip to the company for open sourcing this.
+[^3]: The folks at Stripe who are maintaing Markdoc are quite responsive. Shoutout to them, and hat tip to the company for open sourcing this.
 
 {% /section %}
