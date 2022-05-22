@@ -4,7 +4,7 @@ title: "Entropy"
 author: "Nick Van Exan"
 date: "2021-09-12T22:32:27Z"
 social_image: ""
-summary: "Entropy, the order of time, and the value of kindness."
+summary: "The order of time, and the value of kindness."
 ---
 
 {% partial file="article-title.md" /%}
@@ -17,7 +17,7 @@ This is the only equation in physics that gives time its arrow, according to Mar
 
 > The fact that entropy has been low in the past leads to an important fact that is ubiquitous and crucial for the difference between past and future: the past leaves traces of itself in the present.[^1]
 
-I read this passage in Rovelli's [The Order of Time](https://www.penguinrandomhouse.com/books/551483/the-order-of-time-by-carlo-rovelli/) and it's sort of stuck with me, like inception. I'm not sure why. But there's a couple of interesting ideas to contemplate here for me I guess:
+This passage has stuck with me for some time. I'm not sure why. But there's a couple of interesting ideas to contemplate here for me I guess:
 
 1. Our present isn't just "informed" by our past. It contains it.
 2. The arrow of time is a gradual disordering of previously more particularized states.
@@ -30,4 +30,8 @@ The second law of thermodynamics - the arrow of time - tells us that either way 
 
 It's the simplest equation. It contains multitudes. It reminds me that we collide with one another, and leave traces in one another. It reminds me that if there's one goal worth pursuing, it's probably, simply, trying to make those traces as positive as I can. Looking back, I haven't always done well at remembering this. Looking forward, it's still a goal worthy of pursuit. I'm working on it.
 
+{% section #footnotes .footnotes %}
+
 [^1]: Marco Rovelli, [The Order of Time](https://www.penguinrandomhouse.com/books/551483/the-order-of-time-by-carlo-rovelli/).
+
+{% /section %}
