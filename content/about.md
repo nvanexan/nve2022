@@ -15,16 +15,11 @@ I'm an independent software developer and data protection consultant (CIPP C/E).
 
 I've been writing code for about 20 years, since I was a teenager. My early days were focused on Flash and building innovative UIs with ActionScript. My heroes at the time were folks like [Joshua Davis](https://joshuadavis.com/), [Hillman Curtis](https://en.wikipedia.org/wiki/Hillman_Curtis), [James Paterson (Presstube)](https://twitter.com/presstube) and [Amit Pitaru](https://pitaru.com/). I won a [SXSW Web Award](https://www.sxsw.com/awards/) in 2004 for my work at the time. I couldn't attend because I was still in school and had exams. 
 
-I took a professional detour in my twenties to accomplish some personal goals, which included going to law school at the [University of Toronto Faculty of Law](https://en.wikipedia.org/wiki/University_of_Toronto_Faculty_of_Law). I graduated with a Juris Doctor in 2011, and finished well enough to get a Big Law job. I went on to practice litigation on Bay Street for four years.
+Today I'm what you'd probably call a senior full-stack JavaScript /TypeScript developer. I'm fluent in the "front end" of the "stack" and I still derive tremendous joy from creating UI, but I have also spent  my fair share of time building dev tools, APIs and microservices that run on Node. 
 
-In 2015, law school debts paid off and tired of fighting with people for a living, I returned to what I now understand was my true calling: solving problems with code. I reconnected with some friends at [ObjectSharp](https://objectsharp.com), a local software development consultancy, and joined a team beginning work for a leading Fintech on a SaaS compliance product. I was the first front-end engineer on the team and entrusted with scaffolding the UI in a scalable way. Working closely with the product owner and business analyst, I architected and coded the first iteration of the UI for Finastra's [Fusion Compliance Management](https://www.finastra.com/solutions/brochures/fusion-compliance-management) platform. 
+I am also a certified privacy professional for Europe and Canada and a member of the International Association of Privacy Professionals (IAPP). I advise companies on matters related to privacy engineering, such as architectures for enabling data subject rights, and related compliance goals.
 
-In 2017, my experience as a software developer and knowledge of privacy law took me to [Hootsuite](https://hootsuite.com/), where I helped lead the development of Hootsuite's data protection and GDPR compliance strategy. I learned a lot about change management across multiple teams at a large and high growth startup, and came away with a lot of lessons about how privacy should work at scale. 
-
-
-Today I split my time about 80-20% between software engineering and privacy consulting. On the engineering side, I'm what you'd probably call a senior full-stack JavaScript /TypeScript developer. I'm fluent in the front end of the "stack", but have also spent time building dev tools, APIs and microservices that run on Node. On the privacy side, I am what you might call a "privacy engineer". I am happy to advise legal departments who are in their infancy of setting up a privacy program, but my biggest value add is more as a translator between Legal and IT / Engineering.
-
-In my free time, I like to hang out with my dog, George, run long distances, and contribute to open source software.
+In my free time, I like to hang out with my dog, George, run long distances, and contribute to open source software. I love coffee, live music, and [Japandroids](https://japandroids.com/).
 
 ## Companies I've worked with
 
