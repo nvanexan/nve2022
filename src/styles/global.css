@@ -160,6 +160,11 @@ blockquote {
 blockquote {
   padding-left: var(--body-margin-left);
   border-left: solid 3px;
+  margin 0 0 28px;
+}
+
+blockquote p {
+  font-size: 1.1rem;
 }
 
 article > :where(h1, h2, h3, h4, h5, h6) {
