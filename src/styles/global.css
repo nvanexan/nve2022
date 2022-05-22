@@ -470,3 +470,12 @@ a:hover,
     display: block;
   }
 }
+
+.writing-list {
+  
+  ul li em {
+    color: #a5d6ff;
+    font-size: 0.9rem;
+    font-family: var(--font-display);
+  }
+}
