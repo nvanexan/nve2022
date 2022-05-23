@@ -11,11 +11,9 @@ summary: "A few words about me"
 
 Heya 👋, I'm Nick.
 
-I'm an independent software developer and data protection consultant (CIPP C/E). I live in Toronto but work virtually across a few time zones. 
+I'm a software developer and data protection consultant (CIPP C/E). I live in Toronto and work virtually across a few time zones. 
 
-I've been writing code for about 20 years, since I was a teenager. My early days were focused on Flash and building innovative UIs with ActionScript. My heroes at the time were folks like [Joshua Davis](https://joshuadavis.com/), [Hillman Curtis](https://en.wikipedia.org/wiki/Hillman_Curtis), [James Paterson (Presstube)](https://twitter.com/presstube) and [Amit Pitaru](https://pitaru.com/). I won a [SXSW Web Award](https://www.sxsw.com/awards/) in 2004 for my work at the time. I couldn't attend because I was still in school and had exams. 
-
-Today I'm what you'd probably call a senior full-stack JavaScript /TypeScript developer. I'm fluent in the "front end" of the "stack" and I still derive tremendous joy from creating UI, but I have also spent  my fair share of time building dev tools, APIs and microservices that run on Node. 
+Most of my software development work is for clients of a Microsoft Azure focused consultancy in Toronto called [ObjectSharp](https://objectsharp.com). I'm what you'd probably call a senior full-stack JavaScript / TypeScript developer. I'm fluent in the "front end" of the "stack" and I derive tremendous joy from creating usable and accessible interfaces, but I have also spent  my fair share of time building dev tools, APIs and microservices that run on Node. 
 
 I am also a certified privacy professional for Europe and Canada and a member of the International Association of Privacy Professionals (IAPP). I advise companies on matters related to privacy engineering, such as architectures for enabling data subject rights, and related compliance goals.
 
