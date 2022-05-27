@@ -55,27 +55,27 @@ class Parser {
     // Get the children nodes for each footnote item
     const fnItems = this.getFootnoteItemNodes(fnContainerNode.children);
     for (const fn of fnItems) {
-      const match = this.endNotePattern.exec(fn[0].attributes.content);
-      if (match) {
-        const token = match[0];
-        const id = match[1];
-        fn[0].attributes.content = fn[0].attributes.content.replace(token, "");
-        const anchor = new Ast.Node(
-          "link",
-          { class: "footnote-anchor", href: `#fnref${id}` },
-          [new Ast.Node("text", { content: "↩" })]
+      const token = this.endNotePattern.exec(fn[0].attributes.content);
+      if (token) {
+        // Remove the markdown footnote syntax (e.g. [^1]) from the string
+        fn[0].attributes.content = fn[0].attributes.content.replace(
+          token[0],
+          ""
         );
-        fn.push(anchor);
-        const inline = new Ast.Node("inline", {}, fn);
+        // Create a new footnote item and append to the fnList
+        const id = token[1];
         const fnItem = new Ast.Node(
-          "item",
-          { id: `fn${id}`, class: "footnote-item" },
-          [inline]
+          "footnoteItem",
+          {
+            id: `fn${id}`,
+            href: `#fnref${id}`,
+          },
+          fn
         );
         fnList.push(fnItem);
       }
     }
-    ast.children.pop();
+    ast.children.pop(); // remove the last paragraph in the doc being replaced by the fnList
     ast.push(fnList);
   }
 
@@ -86,20 +86,20 @@ class Parser {
         // Check if there's a footnote ref token
         const token = this.inlineFnPattern.exec(node.attributes.content);
         if (token) {
-          // Break the string where the foonote ref is, assign prev to current node content
+          // Break the string where the foonote ref is, assign first part of string to the current node content
           const [prevText, nextText] = node.attributes.content.split(token[0]);
           node.attributes.content = prevText;
 
-          // Create a footnote node
+          // Create a footnote node and insert it in the tree
           const id = token[1];
-          const fn = new Ast.Node("footnote_ref", {
+          const fn = new Ast.Node("footnoteRef", {
             id: `fnref${id}`,
             href: `#fn${id}`,
             label: `${id}`,
           });
           parent.push(fn);
 
-          // Create a text node which follows after the footnote
+          // Create a text node for the text which follows after the footnote and insert it in the tree
           const next = new Ast.Node("text", { content: nextText });
           parent.push(next);
         }
