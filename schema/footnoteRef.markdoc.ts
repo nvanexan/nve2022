@@ -1,6 +1,6 @@
 import { Config, Node, Tag } from "@markdoc/markdoc";
 
-export const footnote_ref = {
+export const footnoteRef = {
   attributes: {
     id: { type: String, render: true, required: true },
     href: { type: String, render: true, required: true },

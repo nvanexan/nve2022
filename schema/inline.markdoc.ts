@@ -12,6 +12,6 @@ export const inline = {
     "image",
     "hardbreak",
     "softbreak",
-    "footnote_ref",
+    "footnoteRef",
   ],
 };
