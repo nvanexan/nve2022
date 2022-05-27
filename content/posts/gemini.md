@@ -27,8 +27,4 @@ I feel like with the Gemini protocol I've entered a kind of electronic speakeasy
 
 It reminds me of the internet I loved as a teenager. I'm keen to hang out here for a bit.
 
-{% section #footnotes .footnotes %}
-
 [^1]: You can find a lot of good ones [here](https://gemini.circumlunar.space/software/), and they're not all CLIs. There's clients for multiple platforms, including iOS.
-
-{% /section %}
