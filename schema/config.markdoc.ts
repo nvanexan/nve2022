@@ -1,5 +1,5 @@
+import Helpers from "../lib/helpers";
 import { ConfigType, parse } from "@markdoc/markdoc";
-import { getContent } from "../lib/helpers";
 import { spacer } from "./spacer.markdoc";
 import { header } from "./header.markdoc";
 import { link } from "./link.markdoc";
@@ -9,14 +9,18 @@ import { text } from "./text.markdoc";
 import { paragraph } from "./paragraph.markdoc";
 import { image } from "./image.markdoc";
 import { fence } from "./fence.markdoc";
+import { footnote_ref } from "./footnote_ref.markdoc";
+import { inline } from "./inline.markdoc";
 
 export const config = {
   nodes: {
-    link: link,
-    text: text,
-    paragraph: paragraph,
-    image: image,
-    fence: fence,
+    link,
+    text,
+    paragraph,
+    image,
+    fence,
+    inline,
+    footnote_ref,
   },
   tags: {
     spacer,
@@ -25,7 +29,8 @@ export const config = {
     section,
   },
   partials: {
-    "meta.md": parse(getContent("partials/meta")),
-    "article-title.md": parse(getContent("partials/article-title")),
+    "meta.md": parse(Helpers.getContent("partials/meta")),
+    "article-title.md": parse(Helpers.getContent("partials/article-title")),
   },
+  variables: {},
 } as ConfigType;

@@ -34,7 +34,7 @@ function checkImagesLoaded() {
   timesRun++;
 }
 
-const fnContainer = document.getElementById("footnotes");
+const fnContainer = document.getElementsByClassName("footnotes").item(0);
 
 function setFootnotePositions() {
   if (fnContainer) {
@@ -46,11 +46,12 @@ function setFootnotePositions() {
         "footnotes footnotes-js"
       );
     }
-    const footnotes = document.querySelectorAll("#footnotes p");
+    const footnotes = document.querySelectorAll(".footnotes li");
     footnotes.forEach((elem) => {
-      const id = elem.id.replace("fn-", "");
-      const fnRef = document.getElementById(`fnref-${id}`);
-      let containerTop = fnRef?.parentElement?.offsetTop;
+      const id = elem.id.replace("fn", "");
+      const fnRef = document.getElementById(`fnref${id}`);
+      console.log(fnRef?.parentElement?.parentElement);
+      let containerTop = fnRef?.parentElement?.parentElement?.offsetTop;
       let top;
       if (!elem.previousElementSibling) {
         top = containerTop;
