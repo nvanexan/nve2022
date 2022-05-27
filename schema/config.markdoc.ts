@@ -9,8 +9,10 @@ import { text } from "./text.markdoc";
 import { paragraph } from "./paragraph.markdoc";
 import { image } from "./image.markdoc";
 import { fence } from "./fence.markdoc";
-import { footnote_ref } from "./footnote_ref.markdoc";
+import { footnoteRef } from "./footnoteRef.markdoc";
+import { footnoteItem } from "./footnoteItem.markdoc";
 import { inline } from "./inline.markdoc";
+import { list } from "./list.markdoc";
 
 export const config = {
   nodes: {
@@ -20,7 +22,9 @@ export const config = {
     image,
     fence,
     inline,
-    footnote_ref,
+    list,
+    footnoteRef,
+    footnoteItem,
   },
   tags: {
     spacer,
