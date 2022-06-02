@@ -23,7 +23,7 @@ published: true
 
 ## May 2022 {% #may-2022 %}
 
-- Continued UI / a11y engineering work for a publicly traded provider of human resources software
+- Continued UI / accessibility engineering work for a publicly traded provider of human resources software.
 - Continued embedded privacy engineering support for a large SaaS client.
 - Read through every decision on [GDPRHub](<https://gdprhub.eu/index.php?title=Category:Article_5(1)(e)_GDPR>) re Article 5(1)(e) of the GDPR on data retention. **Noteworthy finding:** technical debt doesn't justify keeping personal data after it has served its use. 
 - Updated my personal site to use [Markdoc](https://markdoc.io/) (Stripe's open source markdown authoring system) to render mainly flat HTML / CSS, and removed Next.JS / React. Wrote a few words about that and the perf results [here](https://nick.vanexan.ca/posts/markdoc).
