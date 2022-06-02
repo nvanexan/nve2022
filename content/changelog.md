@@ -1,7 +1,7 @@
 ---
 seo_title: "Changelog | Nick Van Exan"
 title: "Changelog"
-date: "2022-04-30T01:33:19Z"
+date: "2022-06-02T00:34:09Z"
 social_image: ""
 summary: "Monthly updates + happenings"
 published: true
@@ -11,6 +11,7 @@ published: true
 
 {% section .bookmarks %}
 
+- [2022.05](#may-2022)
 - [2022.04](#april-2022)
 - [2022.03](#march-2022)
 - [2022.02](#february-2022)
@@ -19,6 +20,16 @@ published: true
 - [2021.11](#november-2021)
 
 {% /section %}
+
+## May 2022 {% #may-2022 %}
+
+- Work was more of the same. Continued UI / a11y engineering for a publicly traded provider of human resources software, and I continued embedded privacy engineering support for a large SaaS client.
+- Read through the [NIST documentation on de-identification](https://nvlpubs.nist.gov/nistpubs/ir/2015/nist.ir.8053.pdf) and the [ENISA guidance on pseudonymisation techniques](https://www.enisa.europa.eu/publications/pseudonymisation-techniques-and-best-practices/@@download/fullReport). **TLDR:** anonymization is hard.
+- Read through every decision on [GDPRHub](<https://gdprhub.eu/index.php?title=Category:Article_5(1)(e)_GDPR>) re Article 5(1)(e) of the GDPR on data retention. **Noteworthy finding:** technical debt doesn't justify keeping personal data after it has served its use. If you don't have automated processes for timely deletion of personal information, you need to build them, even if that's a hard thing to do.
+- Updated my personal site to use [Markdoc](https://markdoc.io/) to render mainly flat HTML / CSS, and removed Next.JS / React. Wrote a few words about that and the perf results [here](https://nick.vanexan.ca/posts/markdoc).
+- Made some tiny contributions to the [Markdoc library](https://github.com/markdoc/markdoc) itself, Stripe's open source markdown authoring system.
+- Barbecued for the first time this year. Jerk chicken wings!
+- These are [the songs that carried me through May](https://open.spotify.com/playlist/2udcAPL1SRZLjrJclqPvhu?si=80987d15832749d7).
 
 ## April 2022 {% #april-2022 %}
 
