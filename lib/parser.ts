@@ -81,6 +81,7 @@ class Parser {
 
   private processFootnoteRefs(ast: Node) {
     let parent: Node = ast;
+    let count: number = 0;
     for (const node of ast.walk()) {
       if (node.attributes.content) {
         // Check if there's a footnote ref token
@@ -97,16 +98,27 @@ class Parser {
             href: `#fn${id}`,
             label: `${id}`,
           });
-          parent.push(fn);
+          parent.children = this.insertAt(parent.children, fn, count);
 
           // Create a text node for the text which follows after the footnote and insert it in the tree
-          const next = new Ast.Node("text", { content: nextText });
-          parent.push(next);
+          if (nextText) {
+            count += 1;
+            const next = new Ast.Node("text", { content: nextText });
+            parent.children = this.insertAt(parent.children, next, count);
+          }
         }
       }
       // If the node is of inline type, update parent
-      if (node.type == "inline") parent = node;
+      if (node.type == "inline") {
+        parent = node;
+        count = 0;
+      }
+      count += 1;
     }
+  }
+
+  private insertAt(nodes: Node[], nodeToInsert: Node, index: number) {
+    return [...nodes.slice(0, index), nodeToInsert, ...nodes.slice(index)];
   }
 }
 
