@@ -11,6 +11,7 @@ published: true
 
 {% section .bookmarks %}
 
+- [2022.06](#june-2022)
 - [2022.05](#may-2022)
 - [2022.04](#april-2022)
 - [2022.03](#march-2022)
@@ -20,6 +21,17 @@ published: true
 - [2021.11](#november-2021)
 
 {% /section %}
+
+## June 2022 {% #june-2022 %}
+
+- Continued UI / accessibility engineering work for a publicly traded provider of human resources software.
+- On the privacy side, I spent some time consulting on the fallout of the CNIL decision re Google Analytics.
+- Visited my parents for the first time in almost a year, and watched my dad's band play a car show in the middle of nowhere - he's 74 and still slapping the bass 😄
+- Set up a new [raspberrypi](https://www.raspberrypi.com/) at home, running [openvscode-server](https://github.com/gitpod-io/openvscode-server) to give me a personal "Codespace", secured with [Tailscale](https://tailscale.com/)
+- Finished watching [Station Eleven](https://www.imdb.com/title/tt10574236/) - a difficult but also beautiful show; [Himesh Patel](https://en.wikipedia.org/wiki/Himesh_Patel) should win an emmy - he gives a tour de force performance imho
+- Started re-watching [Halt and Catch Fire](https://www.imdb.com/title/tt2543312/) - a show about failure, and feeling good lost
+- Got a new tattoo by [Jack Candlish](https://www.instagram.com/jwcandlish/), a Toronto artist currently at [Archive](http://www.archivetattoo.com/) whose work I admire
+- These are [the songs that carried me through June](https://open.spotify.com/playlist/280xIdRBc2EMAoYBtrMVyn?si=2f901d8f98f9416c)
 
 ## May 2022 {% #may-2022 %}
 
