@@ -22,4 +22,4 @@ In my free time, I like to hang out with my dog, George, run long distances, wat
 I'm always happy to hear from people. Feel free to reach out.
 
 - Email: [nick@vanexan.ca](mailto:nick@vanexan.ca)
-- Twitter: [@nvanexan](https://twitter.com/nvanexan)
+- GitHub: [@nvanexan](https://github.com/nvanexan)
