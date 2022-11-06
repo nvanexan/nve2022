@@ -13,12 +13,14 @@ import { footnoteRef } from "./footnoteRef.markdoc";
 import { footnoteItem } from "./footnoteItem.markdoc";
 import { inline } from "./inline.markdoc";
 import { list } from "./list.markdoc";
+import { heading } from "./heading.markdoc";
 
 export const config = {
   nodes: {
     link,
     text,
     paragraph,
+    heading,
     image,
     fence,
     inline,
