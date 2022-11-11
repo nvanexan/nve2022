@@ -23,3 +23,4 @@ I'm always happy to hear from people. Feel free to reach out.
 
 - Email: [nick@vanexan.ca](mailto:nick@vanexan.ca)
 - GitHub: [@nvanexan](https://github.com/nvanexan)
+- RSS: [changelog feed](/feed.xml)
