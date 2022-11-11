@@ -22,7 +22,9 @@ class Build {
       this.runContentWatcher();
     } else {
       this.copyPublic();
+      await this.compiler.init();
       await this.compiler.compilePages();
+      await this.compiler.compileRss();
       process.exit();
     }
   }
@@ -35,10 +37,12 @@ class Build {
     const watcher = watch(["./content/**/*.md", "./schema/**/*.markdoc.ts"]);
     watcher.on("change", async (path) => {
       console.log("A file has changed, recompiling pages...");
+      await this.compiler.init();
       await this.compiler.compilePages();
     });
     watcher.on("add", async (path) => {
       console.log("A file has been added, recompiling pages...");
+      await this.compiler.init();
       await this.compiler.compilePages();
     });
   }
@@ -57,7 +61,7 @@ class Build {
       defaultConfig: "@parcel/config-default",
     });
 
-    await bundler.watch((err, event) => {
+    await bundler.watch(async (err, event) => {
       if (err) {
         // fatal error
         throw err;
@@ -68,7 +72,8 @@ class Build {
         console.log(
           `✨ Built ${bundles.length} bundles in ${event.buildTime}ms!`
         );
-        this.compiler.compilePages();
+        await this.compiler.init();
+        await this.compiler.compilePages();
       } else if (event?.type === "buildFailure") {
         console.log(event.diagnostics);
       }

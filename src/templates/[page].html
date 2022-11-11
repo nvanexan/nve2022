@@ -57,7 +57,10 @@
     <!-- {{ PREFETCH_ROUTES }} -->
   </head>
   <body>
-    <div class="app">{{ CONTENT }}</div>
+    <div class="app">
+      {{ CONTENT }}
+      <div class="page-pubdate">Page last updated: {{ PUB_DATE }}</div>
+    </div>
     <script defer type="module" src="/main.js"></script>
   </body>
 </html>

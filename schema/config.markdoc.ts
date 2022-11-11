@@ -1,5 +1,4 @@
-import Helpers from "../lib/helpers";
-import { ConfigType, parse } from "@markdoc/markdoc";
+import { ConfigType } from "@markdoc/markdoc";
 import { spacer } from "./spacer.markdoc";
 import { header } from "./header.markdoc";
 import { link } from "./link.markdoc";
@@ -34,9 +33,6 @@ export const config = {
     nav,
     section,
   },
-  partials: {
-    "meta.md": parse(Helpers.getContent("partials/meta")),
-    "article-title.md": parse(Helpers.getContent("partials/article-title")),
-  },
+  partials: {},
   variables: {},
 } as ConfigType;

@@ -1,32 +1,34 @@
 import Markdoc, { Config, ConfigType, Node } from "@markdoc/markdoc";
-import pages from "../src/pages.json";
 import BuildHelpers from "./helpers";
 import PurgeCSS from "purgecss";
 import yaml from "js-yaml";
 import { format, parseISO } from "date-fns";
 import { v4 as uuid } from "uuid";
-import { ArticleFrontMatter } from "./types";
+import { IArticleFrontMatter } from "./types";
 import Parser from "./parser";
+import RSS from "rss";
 
 class Compiler {
+  private BASE_URL: string = "https://nick.vanexan.ca";
+
   private config: ConfigType;
   private parser: Parser;
 
   constructor(config: ConfigType) {
-    this.config = config;
     this.parser = new Parser();
+    this.config = config;
   }
 
-  public async compile(
-    contentPath: string,
-    templateFileName: string,
-    config: ConfigType
-  ) {
-    console.log(`compiling ${contentPath} => ${templateFileName}`);
+  public async init() {
+    await this.initPartials();
+  }
+
+  public async compile(contentPath: string, config: ConfigType) {
+    console.log(`compiling ${contentPath}`);
     // Get source and template files
     const [contentFileName, contentDir] = this.parseFileName(contentPath);
-    const template = BuildHelpers.getTemplate(templateFileName);
-    const source = BuildHelpers.getContent(contentPath);
+    const template = await BuildHelpers.getTemplateAsync(contentPath);
+    const source = await BuildHelpers.getContentAsync(contentPath);
 
     // Parse to AST & validate
     const ast = this.parser.parse(source);
@@ -49,7 +51,9 @@ class Compiler {
     );
 
     // Create the content
-    html = html.replace(/{{ CONTENT }}/, rendered);
+    html = html
+      .replace(/{{ CONTENT }}/, rendered)
+      .replace(/{{ PUB_DATE }}/, frontmatter.date);
 
     // Create the critical CSS
     html = await this.injectCss(html);
@@ -58,15 +62,85 @@ class Compiler {
     html = this.injectPrefetchLinks(ast, html);
 
     // Write the file
-    BuildHelpers.writeFile(contentDir, contentFileName, html);
+    await BuildHelpers.writeFileAsync(contentDir, contentFileName, html);
   }
 
   public async compilePages() {
-    // For each page / template pair, compile page content into a file
-    const pagesToCompile = Object.entries(pages).map(([path, template]) => {
-      return this.compile(path, template, this.config);
+    console.log("------- compiling pages... -------");
+    for await (const f of BuildHelpers.getAllFiles("./content")) {
+      if (f.includes("partials")) continue;
+      await this.compile(f, this.config);
+    }
+    console.log("------- pages compiled -------");
+  }
+
+  public async compileRss() {
+    console.log("------- compiling RSS feed... -------");
+    const baseUrl = this.BASE_URL;
+
+    const feed = new RSS({
+      title: "Changelog | Nick Van Exan",
+      description: "Nick's monthly updates",
+      site_url: baseUrl,
+      feed_url: baseUrl,
     });
-    await Promise.all(pagesToCompile);
+
+    const logs = [] as any[];
+    for await (const f of BuildHelpers.getAllFiles("./content/changelog")) {
+      const ast = this.parser.parse(await BuildHelpers.getContentAsync(f));
+      const frontmatter = this.parseFrontMatter(ast.attributes.frontmatter);
+      const content = Markdoc.renderers.html(
+        Markdoc.transform(ast, this.config)
+      );
+      logs.push({ file: f, frontmatter, content });
+    }
+
+    logs
+      .reverse()
+      .forEach(
+        (l: {
+          file: string;
+          frontmatter: IArticleFrontMatter;
+          content: string;
+        }) => {
+          console.log(`Adding RSS item: ${l.frontmatter.title}`);
+          feed.item({
+            title: l.frontmatter.title,
+            guid: `${l.file.replace(".md", "")}`,
+            url: `${baseUrl}/${l.file.replace(".md", "")}`,
+            date: l.frontmatter.date,
+            description: l.content,
+          });
+        }
+      );
+
+    const xml = feed.xml({ indent: true });
+    await BuildHelpers.writeRss(xml);
+    console.log("------- RSS feed compiled -------");
+  }
+
+  private async initPartials() {
+    console.log("------- initializing partials... -------");
+    const partials = {} as any;
+
+    // Get anything in the partials directory of content, and add to partials
+    for await (const f of BuildHelpers.getAllFiles("./content/partials")) {
+      console.log(f);
+      partials[f] = this.parser.parse(await BuildHelpers.getContentAsync(f));
+    }
+
+    // Get anything in the changelog directory of content, and add to partials
+    for await (const f of BuildHelpers.getAllFiles("./content/changelog")) {
+      console.log(f);
+      // Remove the article-title when incorporating the log as a partial
+      const content = await (
+        await BuildHelpers.getContentAsync(f)
+      ).replace('{% partial file="partials/article-title.md" /%}', "");
+      partials[f] = this.parser.parse(content);
+    }
+
+    this.config.partials = partials;
+    console.log("------- partials initialized -------");
   }
 
   private async injectCss(html: string) {
@@ -124,22 +198,22 @@ class Compiler {
     return [name, paths[0]];
   }
 
-  private parseFrontMatter(frontmatter: string): ArticleFrontMatter | any {
+  private parseFrontMatter(frontmatter: string): IArticleFrontMatter | any {
     if (!frontmatter) return {};
-    const result = yaml.load(frontmatter) as ArticleFrontMatter;
+    const result = yaml.load(frontmatter) as IArticleFrontMatter;
     if (result.date)
       result.shortDate = format(parseISO(result.date), "MM/dd/yy");
     return result;
   }
 
   private buildMetaTags(
-    frontmatter: ArticleFrontMatter,
+    frontmatter: IArticleFrontMatter,
     path: string,
     fileName: string,
     html: string
   ) {
     let { seo_title, seo_description } = frontmatter;
-    let base_url = "https://nick.vanexan.ca";
+    let base_url = this.BASE_URL;
     let seo_url = path
       ? `${base_url}/${path}/${fileName}`
       : `${base_url}/${fileName}`;

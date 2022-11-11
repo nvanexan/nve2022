@@ -29,8 +29,6 @@ export const heading = {
     const { level, ...rest } = attributes;
     const id = generateID(children, attributes);
 
-    console.log({ ...rest, id });
-
     return new Tag(`h${level}`, { ...rest, id }, children);
   },
 };

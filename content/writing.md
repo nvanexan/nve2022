@@ -7,7 +7,7 @@ social_image: ""
 summary: "Some thoughts on sundry topics"
 ---
 
-{% partial file="article-title.md" /%}
+{% partial file="partials/article-title.md" /%}
 
 {% section .writing-list %}
 

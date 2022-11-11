@@ -7,7 +7,7 @@ social_image: ""
 summary: "Current areas of focus + interests"
 ---
 
-{% partial file="article-title.md" /%}
+{% partial file="partials/article-title.md" /%}
 
 - Working with a publicly traded HR SaaS platform to help make their aging [Dojo](https://dojotoolkit.org/) / [React](https://reactjs.org/) codebase accessible to [WCAG Level AA spec](https://www.w3.org/WAI/WCAG2AA-Conformance).
 - Consulting for a global SaaS provider on matters related to privacy engineering.
