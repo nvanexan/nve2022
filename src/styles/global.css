@@ -303,6 +303,10 @@ ol li::marker {
     right: unset;
     max-width: unset;
   }
+
+  .meta .content-text {
+    display: none;
+  }
 }
 
 .page-pubdate {
