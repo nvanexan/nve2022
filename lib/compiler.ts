@@ -87,7 +87,11 @@ class Compiler {
 
     const logs = [] as any[];
     for await (const f of BuildHelpers.getAllFiles("./content/changelog")) {
-      const ast = this.parser.parse(await BuildHelpers.getContentAsync(f));
+      // Remove the article-title when incorporating the log in a feed
+      const fileContent = await (
+        await BuildHelpers.getContentAsync(f)
+      ).replace('{% partial file="partials/article-title.md" /%}', "");
+      const ast = this.parser.parse(fileContent);
       const frontmatter = this.parseFrontMatter(ast.attributes.frontmatter);
       const content = Markdoc.renderers.html(
         Markdoc.transform(ast, this.config)
