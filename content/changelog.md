@@ -9,7 +9,7 @@ published: true
 
 {% partial file="partials/article-title.md" /%}
 
-New: the changelog is also now available as an [RSS feed](/feed.xml).
+New: the changelog is also now available as an [RSS feed](/feed.xml) and [Email Newsletter](https://buttondown.email/nickvanexan)
 
 ## Latest Updates
 
