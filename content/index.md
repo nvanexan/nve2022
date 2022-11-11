@@ -1,6 +1,6 @@
 ---
 seo_title: "Nick Van Exan"
-seo_description: "Data protection consultant (CIPP/C, CIPP/E) and software developer from Toronto."
+seo_description: "Software developer and data protection consultant (CIPP/C, CIPP/E) from Toronto."
 title: "Home"
 date: "2022-02-28T20:46:51Z"
 social_image: ""
@@ -33,3 +33,4 @@ Software developer and certified privacy professional (CIPP C/E). Helping organi
 
 - Email: [nick@vanexan.ca](mailto:nick@vanexan.ca)
 - GitHub: [@nvanexan](https://github.com/nvanexan)
+- RSS: [changelog feed](/feed.xml)

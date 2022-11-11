@@ -1,5 +1,4 @@
-import Helpers from "../lib/helpers";
-import { ConfigType, parse } from "@markdoc/markdoc";
+import { ConfigType } from "@markdoc/markdoc";
 import { spacer } from "./spacer.markdoc";
 import { header } from "./header.markdoc";
 import { link } from "./link.markdoc";
@@ -13,12 +12,14 @@ import { footnoteRef } from "./footnoteRef.markdoc";
 import { footnoteItem } from "./footnoteItem.markdoc";
 import { inline } from "./inline.markdoc";
 import { list } from "./list.markdoc";
+import { heading } from "./heading.markdoc";
 
 export const config = {
   nodes: {
     link,
     text,
     paragraph,
+    heading,
     image,
     fence,
     inline,
@@ -32,9 +33,6 @@ export const config = {
     nav,
     section,
   },
-  partials: {
-    "meta.md": parse(Helpers.getContent("partials/meta")),
-    "article-title.md": parse(Helpers.getContent("partials/article-title")),
-  },
+  partials: {},
   variables: {},
 } as ConfigType;

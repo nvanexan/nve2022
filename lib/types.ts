@@ -1,4 +1,4 @@
-export interface ArticleFrontMatter {
+export interface IArticleFrontMatter {
   seo_title: string;
   seo_description: string;
   title: string;

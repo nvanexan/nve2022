@@ -6,26 +6,46 @@ class BuildHelpers {
   static TEMPLATES_DIR: string = "./src/templates";
   static CONTENTS_DIR: string = "./content";
 
-  static getTemplate(fileName: string) {
-    return fs.readFileSync(
-      path.resolve(this.TEMPLATES_DIR, `${fileName}.html`),
+  static getTemplateAsync(contentPath: string) {
+    // For now we just have two templates, handling this in code
+    // Should convert to configuration if becomes more complex over time
+    const template = contentPath.includes("post") ? "[post]" : "[page]";
+    return fs.promises.readFile(
+      path.resolve(this.TEMPLATES_DIR, `${template}.html`),
       "utf-8"
     );
   }
 
-  static getContent(fileName: string) {
-    return fs.readFileSync(
-      path.resolve(this.CONTENTS_DIR, `${fileName}.md`),
+  static async getContentAsync(fileName: string) {
+    return fs.promises.readFile(
+      path.resolve(this.CONTENTS_DIR, fileName),
       "utf-8"
     );
   }
 
-  static writeFile(dir: string, fileName: string, html: string) {
+  static async *getAllFiles(dir: string): AsyncGenerator<string> {
+    const dirEntries = await fs.promises.readdir(dir, { withFileTypes: true });
+    for (const dirent of dirEntries) {
+      const res = path.resolve(dir, dirent.name);
+      if (dirent.isDirectory()) {
+        yield* BuildHelpers.getAllFiles(res);
+      } else {
+        yield res.replace(/.*content\//, "");
+      }
+    }
+  }
+
+  static async writeFileAsync(dir: string, fileName: string, html: string) {
     const path = dir ? `${this.BUILD_DIR}/${dir}` : `${this.BUILD_DIR}`;
     if (!fs.existsSync(path)) {
       fs.mkdirSync(path, { recursive: true });
     }
-    fs.writeFileSync(`${path}/${fileName}.html`, html);
+    return fs.promises.writeFile(`${path}/${fileName}.html`, html);
+  }
+
+  static async writeRss(xml: string) {
+    const path = this.BUILD_DIR;
+    return fs.promises.writeFile(`${path}/feed.xml`, xml);
   }
 
   static copyFileSync(source: string, target: string) {

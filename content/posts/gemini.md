@@ -7,7 +7,7 @@ social_image: ""
 summary: "Tumbling down the Gemini rabbit hole"
 ---
 
-{% partial file="article-title.md" /%}
+{% partial file="partials/article-title.md" /%}
 
 This week I discovered the [Gemini Protocol](https://gemini.circumlunar.space/). I'm loving the underlying philosophy and ambition.
 

@@ -281,8 +281,7 @@ ol li::marker {
   right: calc(var(--content-width) + var(--side));
   width: calc(var(--page-margin) - var(--side) - 48px);
   max-width: 192px;
-  margin-top: -56px;
-  margin-bottom: 0;
+  margin-bottom: 8rem;
 }
 
 .meta a {
@@ -303,8 +302,23 @@ ol li::marker {
     left: unset;
     right: unset;
     max-width: unset;
-    margin-top: 42px;
   }
+
+  .meta .content-text {
+    display: none;
+  }
+}
+
+.page-pubdate {
+  font-size: 12px;
+  opacity: 0.5;
+  margin-top: 5rem;
+  transition: opacity 1s ease-in-out;
+  display: none;
+}
+
+.page-pubdate:hover {
+  opacity: 1;
 }
 
 /* ---------------------------------- */

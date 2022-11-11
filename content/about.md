@@ -7,13 +7,13 @@ social_image: ""
 summary: "A few words about me"
 ---
 
-{% partial file="article-title.md" /%}
+{% partial file="partials/article-title.md" /%}
 
 Heya 👋, I'm Nick.
 
-I'm a software developer and data protection consultant (CIPP C/E). I live in Toronto and work virtually across a few time zones.  
+I'm a software developer and data protection consultant (CIPP C/E). I live in Toronto and work virtually across a few time zones.
 
-In my free time, I like to hang out with my dog, George, run long distances, watch live music and contribute to open source software. 
+In my free time, I like to hang out with my dog, George, run long distances, watch live music and contribute to open source software.
 
 {% spacer size=12 /%}
 
@@ -23,3 +23,4 @@ I'm always happy to hear from people. Feel free to reach out.
 
 - Email: [nick@vanexan.ca](mailto:nick@vanexan.ca)
 - GitHub: [@nvanexan](https://github.com/nvanexan)
+- RSS: [changelog feed](/feed.xml)

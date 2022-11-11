@@ -7,7 +7,7 @@ social_image: ""
 summary: "The order of time, and the value of kindness."
 ---
 
-{% partial file="article-title.md" /%}
+{% partial file="partials/article-title.md" /%}
 
 > ΔS≥0
 

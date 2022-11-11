@@ -7,7 +7,7 @@ social_image: "https://user-images.githubusercontent.com/62121649/166573698-b4bc
 summary: "Using Markdoc for static site generation"
 ---
 
-{% partial file="article-title.md" /%}
+{% partial file="partials/article-title.md" /%}
 
 Last week I discovered [Markdoc](https://markdoc.io/). It's a Markdown parser and authoring framework by the folks at [Stripe](https://stripe.com) that allows you to _compose_ content in a fully declarative way.[^1] I love the philosophy and ambition.
 
@@ -119,7 +119,7 @@ The performance results were fun. Some comparisons of [Lighthouse](https://devel
 
 I learned some lessons along my journey.
 
-First, not all Markdown tokens or features are supported by Markdoc. Link and image title attributes, for example, were not supported initially. I've since contributed a couple of PRs to get those items handled by the parser.[^3]  Similarly, footnotes are not directly supported at the time of writing. This means that the parser, which creates the AST, doesn't inherently parse Markdown footnotes at the first stage of processing. I made a [PR to the Markdoc repo](https://github.com/markdoc/markdoc/pull/40) to provide support for footnotes in the Markdoc parser itself, but the authors have, I think fairly, declined the addition of this for now. They would prefer that users re-mix existing APIs rather than continually extend the syntax of Markdoc itself. The user is then left with a couple of options: create and use custom tags, like `{% footnotes %}`, or wrap the Markdoc parser with extended functionality for making footnotes supported in the AST as nodes vs. just tags.[^4]
+First, not all Markdown tokens or features are supported by Markdoc. Link and image title attributes, for example, were not supported initially. I've since contributed a couple of PRs to get those items handled by the parser.[^3] Similarly, footnotes are not directly supported at the time of writing. This means that the parser, which creates the AST, doesn't inherently parse Markdown footnotes at the first stage of processing. I made a [PR to the Markdoc repo](https://github.com/markdoc/markdoc/pull/40) to provide support for footnotes in the Markdoc parser itself, but the authors have, I think fairly, declined the addition of this for now. They would prefer that users re-mix existing APIs rather than continually extend the syntax of Markdoc itself. The user is then left with a couple of options: create and use custom tags, like `{% footnotes %}`, or wrap the Markdoc parser with extended functionality for making footnotes supported in the AST as nodes vs. just tags.[^4]
 
 Second, there is the age-old engineering issue of trade-offs. I had some hesitation about incorporating a specific syntax into my fairly vanilla Markdown files. To be sure, I had to make this choice when I chose MDX before too. But it is an important consideration, as you will start to get married to the specific syntax. For example, at the top of my blog posts, I use a [Markdoc partial](https://markdoc.io/docs/partials) to render the header of each post, so I can keep my code dry and not have to repeat this everywhere. But when viewing the document outside of this website, the syntax appears alien and not super fun to look at. If you value _clean_ and _portable_ Markdown (_i.e._ easily readable / parseable / transferrable across apps and other places that accept Markdown) then Markdoc is likely not for you.
 

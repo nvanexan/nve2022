@@ -1,7 +1,7 @@
-{% section .meta %}
+{% header .meta %}
 
 [Nick Van Exan](/) {% .content-heading %}
 
-{% $frontmatter.shortDate %} {% .content-text %}
+Software Developer {% .content-text %}
 
-{% /section %}
+{% /header %}
