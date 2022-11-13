@@ -1,18 +1,18 @@
 import { ConfigType } from "@markdoc/markdoc";
-import { spacer } from "./spacer.markdoc";
-import { header } from "./header.markdoc";
-import { link } from "./link.markdoc";
-import { nav } from "./nav.markdoc";
-import { section } from "./section.markdoc";
-import { text } from "./text.markdoc";
-import { paragraph } from "./paragraph.markdoc";
-import { image } from "./image.markdoc";
-import { fence } from "./fence.markdoc";
-import { footnoteRef } from "./footnoteRef.markdoc";
-import { footnoteItem } from "./footnoteItem.markdoc";
-import { inline } from "./inline.markdoc";
-import { list } from "./list.markdoc";
-import { heading } from "./heading.markdoc";
+import { spacer } from "./tags/spacer.markdoc";
+import { header } from "./tags/header.markdoc";
+import { link } from "./nodes/link.markdoc";
+import { nav } from "./tags/nav.markdoc";
+import { section } from "./tags/section.markdoc";
+import { text } from "./nodes/text.markdoc";
+import { paragraph } from "./nodes/paragraph.markdoc";
+import { image } from "./nodes/image.markdoc";
+import { fence } from "./nodes/fence.markdoc";
+import { footnoteRef } from "./nodes/footnoteRef.markdoc";
+import { footnoteItem } from "./nodes/footnoteItem.markdoc";
+import { inline } from "./nodes/inline.markdoc";
+import { list } from "./nodes/list.markdoc";
+import { heading } from "./nodes/heading.markdoc";
 
 export const config = {
   nodes: {
@@ -33,6 +33,7 @@ export const config = {
     nav,
     section,
   },
+  functions: {},
   partials: {},
   variables: {},
 } as ConfigType;

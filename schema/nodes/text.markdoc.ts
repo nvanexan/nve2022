@@ -1,4 +1,4 @@
-import { Config, Node, Tag } from "@markdoc/markdoc";
+import { Node } from "@markdoc/markdoc";
 
 export const text = {
   attributes: {

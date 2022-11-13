@@ -1,6 +1,5 @@
 import { Config, Node, RenderableTreeNode, Tag } from "@markdoc/markdoc";
 
-// Or replace this with your own function
 function generateID(
   children: RenderableTreeNode[],
   attributes: Record<string, any>

@@ -1,4 +1,4 @@
-import { Config, Node, RenderableTreeNode, Tag } from "@markdoc/markdoc";
+import { Config, Node, Tag } from "@markdoc/markdoc";
 
 export const image = {
   render: "img",

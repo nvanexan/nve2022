@@ -1,5 +1,3 @@
-import { Config, Node, Tag } from "@markdoc/markdoc";
-
 export const inline = {
   children: [
     "strong",
