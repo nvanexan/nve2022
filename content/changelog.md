@@ -15,6 +15,7 @@ New: the changelog is also now available as an [RSS feed](/feed.xml) and [Email 
 
 {% section .bookmarks %}
 
+- [2022.11](#november-2022)
 - [2022.06](#june-2022)
 - [2022.05](#may-2022)
 - [2022.04](#april-2022)
@@ -26,6 +27,8 @@ New: the changelog is also now available as an [RSS feed](/feed.xml) and [Email 
 
 {% /section %}
 
+{% partial file="changelog/2022-11.md" /%}
+{% partial file="changelog/2022-06.md" /%}
 {% partial file="changelog/2022-06.md" /%}
 {% partial file="changelog/2022-05.md" /%}
 {% partial file="changelog/2022-04.md" /%}
