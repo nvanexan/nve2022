@@ -11,7 +11,7 @@ summary: "Thinking through Micro Frontends"
 
 Last week I was asked by a client to give a talk on micro frontends and design systems. The organization is in the process of moving out of a monolithic architecture with an aging, unstable frontend codebase that was written in [Dojo](https://dojotoolkit.org/) to a UI written in [React](https://reactjs.org/). 
 
-I lead an a11y team that is working to improve the accessibility of the application to [WCAG AA standards](https://www.w3.org/WAI/WCAG2AA-Conformance), supporting the organization's journey both in the monolith and its movement to a React-based design system.
+I work on and with a set of a11y teams that are working to improve the accessibility of the application to [WCAG AA standards](https://www.w3.org/WAI/WCAG2AA-Conformance), supporting the organization's journey both in the monolith and its movement to a React-based design system.
 
 During my talk, I fielded questions about what micro frontends are, why they might be useful, and how to implement them. The following are notes I have on these topics from our journey out of a difficult monolith codebase: what's working, what's not, and lessons learned along the way.
 
