@@ -66,6 +66,7 @@
   --grayA12: hsl(0 0% 100%/0.923);
 
   --blue: #4895f4;
+  --accent-blue: #a5d6ff;
   --link: var(--gray9);
 
   --selection: var(--grayA4);
@@ -84,10 +85,17 @@
     --prism-bg: #161b22;
     --highlight-bg: var(--selection);
     --link: var(--gray11);
+    --blue: #4895f4;
+    --accent-blue: #a5d6ff;
   }
 }
 
 @media (prefers-color-scheme: light) {
+  :root {
+    --blue: #0969da;
+    --accent-blue: #2d4aae;
+  }
+
   .diagram.unimode path,
   .diagram.unimode text {
     stroke: white;
@@ -521,7 +529,7 @@ a:hover,
 }
 
 .writing-list ul li em {
-  color: #a5d6ff;
+  color: var(--accent-blue);
   font-size: 0.9rem;
   font-family: var(--font-display);
 }
