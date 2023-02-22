@@ -3,6 +3,7 @@ seo_title: "Micro Frontends | Nick Van Exan"
 title: "Micro Frontends"
 author: "Nick Van Exan"
 date: "2023-02-22T19:39:23Z"
+social_image: "https://nick.vanexan.ca/public/images/MFE-social.png"
 summary: "Some thoughts on Micro Frontends"
 ---
 
