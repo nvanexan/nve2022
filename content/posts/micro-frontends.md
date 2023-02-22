@@ -4,7 +4,7 @@ title: "Micro Frontends"
 author: "Nick Van Exan"
 date: "2023-02-22T19:39:23Z"
 social_image: "https://nick.vanexan.ca/public/images/MFE-social.png"
-summary: "Thinking through Micro Frontends"
+summary: "Thinking through Micro Frontends for Large Organizations"
 ---
 
 {% partial file="partials/article-title.md" /%}
