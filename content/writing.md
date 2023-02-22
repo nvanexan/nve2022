@@ -11,6 +11,7 @@ summary: "Some thoughts on sundry topics"
 
 {% section .writing-list %}
 
+- [Micro Frontends](/posts/micro-frontends) _(2023-02-22)_
 - [Markdoc](/posts/markdoc) _(2022-05-19)_
 - [Gemini](/posts/gemini) _(2021-11-19)_
 - [Entropy](/posts/entropy) _(2021-09-12)_

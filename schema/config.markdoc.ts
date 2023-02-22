@@ -13,6 +13,7 @@ import { footnoteItem } from "./nodes/footnoteItem.markdoc";
 import { inline } from "./nodes/inline.markdoc";
 import { list } from "./nodes/list.markdoc";
 import { heading } from "./nodes/heading.markdoc";
+import { diagram } from "./tags/diagram.markdoc";
 
 export const config = {
   nodes: {
@@ -32,6 +33,7 @@ export const config = {
     header,
     nav,
     section,
+    diagram,
   },
   functions: {},
   partials: {},

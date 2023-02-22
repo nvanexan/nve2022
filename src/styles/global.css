@@ -87,6 +87,17 @@
   }
 }
 
+@media (prefers-color-scheme: light) {
+  path,
+  text {
+    stroke: white;
+  }
+
+  text {
+    fill: white;
+  }
+}
+
 @media (max-width: 768px) {
   :root {
     --page-top: 64px;
@@ -146,6 +157,19 @@ h6 {
   font-family: var(--font-display);
   font-feature-settings: "kern", "calt", "case";
   margin: 0;
+}
+
+h3 {
+  opacity: 0.8;
+}
+
+h4 {
+  opacity: 0.6;
+}
+
+h5,
+h6 {
+  opacity: 0.4;
 }
 
 s {
@@ -219,12 +243,14 @@ ul,
   grid-auto-rows: auto;
 }
 
-img {
+img,
+svg {
   max-width: 100%;
   height: auto;
 }
 
-.image-container {
+.image-container,
+.diagram {
   display: block;
   width: 100%;
   height: auto;
@@ -233,7 +259,8 @@ img {
   margin-top: 0;
 }
 
-.image-container figcaption {
+.image-container figcaption,
+.diagram figcaption {
   font-size: 12px;
   opacity: 0.7;
   margin: 12px 0;
@@ -243,6 +270,11 @@ img {
 .writing-section li em {
   margin-left: 1rem;
   font-size: 0.9em;
+}
+
+nve-diagram {
+  display: block;
+  margin: 4rem 0;
 }
 
 /* ---------------------------------- */
