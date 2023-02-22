@@ -4,7 +4,7 @@ title: "Micro Frontends"
 author: "Nick Van Exan"
 date: "2023-02-22T19:39:23Z"
 social_image: "https://nick.vanexan.ca/public/images/MFE-social.png"
-summary: "Thinking through Micro Frontends for Large Organizations"
+summary: "Some thoughts on MFEs for large organizations"
 ---
 
 {% partial file="partials/article-title.md" /%}
@@ -109,4 +109,4 @@ To summarize some lessons I've learned wrangling MFE architectures in the real w
 - **Align on patterns and tech stacks** => the same tooling for as many as possible
 - **Trust but verify; share and document** => make time for code reviews and knowledge shares for consistent patterns and practices across MFEs
 
-Doing MFEs well is not easy. It can get unruly pretty quickly. If you're having difficulties or growing pains with your move to an MFE architecture, feel free to [reach out](mailto:nick@vanexan.ca). I'm always happy to chat.
+Doing MFEs well is not easy. It can get unruly pretty quickly. If you're having difficulties or growing pains with your move to an MFE architecture, I hope the above may be of some benefit. Cheers!
