@@ -24,6 +24,12 @@ export class Diagram extends HTMLElement {
     figure.className = "diagram";
     figure.innerHTML = this.svgdata;
 
+    if (this.alt) {
+        const figcaption = document.createElement("figcaption");
+        figcaption.textContent = this.alt;
+        figure.appendChild(figcaption);
+    }
+
     this.appendChild(figure);
     this.removeAttribute("svgdata"); //cleanup
   }
