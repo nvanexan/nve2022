@@ -5,6 +5,7 @@ class BuildHelpers {
   static BUILD_DIR: string = "./dist";
   static TEMPLATES_DIR: string = "./src/templates";
   static CONTENTS_DIR: string = "./content";
+  static PUBLIC_DIR: string = "./public";
 
   static getTemplateAsync(contentPath: string) {
     // For now we just have two templates, handling this in code
@@ -21,6 +22,10 @@ class BuildHelpers {
       path.resolve(this.CONTENTS_DIR, fileName),
       "utf-8"
     );
+  }
+
+  static getPublicFileSync(fileName: string) {
+    return fs.readFileSync(path.resolve(this.PUBLIC_DIR, fileName), "utf-8");
   }
 
   static async *getAllFiles(dir: string): AsyncGenerator<string> {

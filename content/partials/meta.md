@@ -2,6 +2,6 @@
 
 [Nick Van Exan](/) {% .content-heading %}
 
-Curious Earthling {% .content-text %}
+Software Engineer {% .content-text %}
 
 {% /header %}

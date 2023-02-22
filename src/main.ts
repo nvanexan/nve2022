@@ -1,9 +1,7 @@
-// import { Meta } from "./components/meta";
-// import { Spacer } from "./components/spacer";
+import { Diagram } from "./components/diagram";
 
 // // Define your components below
-// customElements.define("nve-spacer", Spacer);
-// customElements.define("nve-meta", Meta);
+customElements.define("nve-diagram", Diagram);
 
 function debounce(func: any, time: number = 100) {
   let timer: any;
