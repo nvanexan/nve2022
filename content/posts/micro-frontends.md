@@ -9,7 +9,7 @@ summary: "Thinking through Micro Frontends for Large Organizations"
 
 {% partial file="partials/article-title.md" /%}
 
-Last week I was asked by a client to give a talk on micro frontends and design systems. The organization is in the process of moving out of a monolithic architecture with an aging, unstable frontend codebase that was written in [Dojo](https://dojotoolkit.org/) to a UI written in [React](https://reactjs.org/). 
+Last week I was asked by a client to give a talk on micro frontends and design systems. The organization is in the process of moving out of a monolithic architecture with an aging, unstable frontend codebase that was written in [Dojo](https://dojotoolkit.org/) to a UI written in [React](https://reactjs.org/).
 
 I work on and with a set of a11y teams that are working to improve the accessibility of the application to [WCAG AA standards](https://www.w3.org/WAI/WCAG2AA-Conformance), supporting the organization's journey both in the monolith and its movement to a React-based design system.
 
@@ -27,7 +27,7 @@ During my talk, I fielded questions about what micro frontends are, why they mig
 
 These issues aren't great, for morale, for DX, for code quality, for user experience, and more. But with 15 year old software, you can't re-write everything in one shot overnight. You need to move incrementally to your desired state. And that's where MFEs play an important role.
 
-The goal with implementing MFEs is to allow frontend teams to scaffold new repos that are separate and independent from the monolith. 
+The goal with implementing MFEs is to allow frontend teams to scaffold new repos that are separate and independent from the monolith.
 
 Those repos can have their own modern tech stack. In my client's case, that stack consists of [React](https://reactjs.org/) for UI, [Storybook](https://storybook.js.org/) for documentation, [Jest](https://jestjs.io/) for unit testing, and [Typescript](https://www.typescriptlang.org/) for type safety and easier UI API documentation.
 
@@ -46,13 +46,13 @@ Some teams within the organization are already spinning up MFE repos and getting
 - Independent deployment
 - Autonomous teams
 
-In addition, these teams are beginning to leverage a [design system](https://www.invisionapp.com/inside-design/guide-to-design-systems/) that is being scaffolded quickly in parallel. That design system is React-based, and leverages [Storybook](https://storybook.js.org/) to give all teams a consistent set of interactive documentation. 
+In addition, these teams are beginning to leverage a [design system](https://www.invisionapp.com/inside-design/guide-to-design-systems/) that is being scaffolded quickly in parallel. That design system is React-based, and leverages [Storybook](https://storybook.js.org/) to give all teams a consistent set of interactive documentation.
 
-Importantly for my team, that design systems is where a lot of a11y engineering and testing is being targeted. The idea is, as feature teams spin up their MFEs, the new design system will be part of their bootstrap - a baseline dependency which they can  use to compose their UI.
+Importantly for my team, that design systems is where a lot of a11y engineering and testing is being targeted. The idea is, as feature teams spin up their MFEs, the new design system will be part of their bootstrap - a baseline dependency which they can use to compose their UI.
 
 The following diagram illustrates the various stakeholders who are involved in the creation and maintenance of the design system. Feature teams are encouraged to contribute back to the design system UI kit, similar to open-source.
 
-{% diagram src="/public/images/DesignSystems.svg" alt="Design System Stakeholders" /%}
+{% diagram src="/public/images/DesignSystems.svg" alt="Design System Stakeholders" multimode=true /%}
 
 ## MFE Burdens and Common Mistakes
 
@@ -71,7 +71,7 @@ For example, leadership within my client's organization is asking how quickly th
 
 While some discrete UI components may do fine as separate MFEs, generally you don't want to have an MFE for every UI component you are attempting to replace. If you have 1,000 base UI components, you'd end up with 1,000 MFEs. Now imagine trying to find the right repo to update your code. You can't easily. And good luck with not only debugging but onboarding too.
 
-The aim with MFEs is not to recreate spaghetti but rather to make your application more like a pizza. You want to slice your existing codebase into features or otherwise logical chunks, and move that entire slice into its own MFE. 
+The aim with MFEs is not to recreate spaghetti but rather to make your application more like a pizza. You want to slice your existing codebase into features or otherwise logical chunks, and move that entire slice into its own MFE.
 
 This process is of course more art than science. In some cases, a logical slice for an MFE might be a whole section of an application under a particular route of navigation. In other cases, it might be something more cross-cutting that still makes sense as a discrete unit of development, such as an inbox messaging service or a bespoke chatbot.
 
@@ -81,7 +81,7 @@ The aim is to ensure that your MFEs represent sections of the application that a
 
 This is another sin I've seen repeated across organizations. MFEs are advertised as ways to allow your organization to have teams leveraging different tech stacks that suit their desires. Team A wants Vue, Team B wants Angular, and Team C wants React. With MFEs, they can each have it their way. Right?
 
-Wrong. Or maybe, but you may not like the outcome. 
+Wrong. Or maybe, but you may not like the outcome.
 
 Firstly, if you do this, you'll need multiple design systems to cater to the multiple tech stacks, which is not desirable from a code re-usability point of view. Secondly, and crucially, if you do this you'll have different coding paradigms and patterns in each MFE, making it difficult for engineers on Team A to work on features maintained by engineers on Team B. From a governance perspective, and an engineering management perspective, this is a losing proposition. Specific teams may gain velocity, but the the velocity of the organization as a whole may suffer.
 
@@ -97,7 +97,7 @@ This last issue is kindling for the rest of the above issues. And it is, again, 
 
 Platform engineering teams are needed to help ensure that MFEs are initially scaffolded with the right technologies, tooling, and patterns. They need to show the rest of the organization what a good starter MFE looks like, and how to go about building it out. And there needs to be adequate documentation of expectations, in the MFE readme files and on internal wikis.
 
-For engineers to work seamlessly across MFEs, each MFE needs to be well-documented, particularly where it departs from generally accepted organizational patterns, technologies or architectures. The feature teams, and the platform team, need to be working together to document and maintain standards and a cohesive approach to patterns and practices. 
+For engineers to work seamlessly across MFEs, each MFE needs to be well-documented, particularly where it departs from generally accepted organizational patterns, technologies or architectures. The feature teams, and the platform team, need to be working together to document and maintain standards and a cohesive approach to patterns and practices.
 
 The aim should be making onboarding an engineer into an organization as painless as possible. With multiple MFEs, where potentially anything goes in each repo, greater vigilance in documenting decisions and approaches is needed.
 

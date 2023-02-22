@@ -88,12 +88,12 @@
 }
 
 @media (prefers-color-scheme: light) {
-  path,
-  text {
+  .diagram.unimode path,
+  .diagram.unimode text {
     stroke: white;
   }
 
-  text {
+  .diagram.unimode text {
     fill: white;
   }
 }
@@ -307,7 +307,7 @@ ol li::marker {
 /* ---------------------------------- */
 
 .meta {
-  --side: 64px;
+  --side: 44px;
   --page-margin: calc((100vw - var(--content-width)) / 2);
   position: absolute;
   right: calc(var(--content-width) + var(--side));
@@ -327,17 +327,13 @@ ol li::marker {
   margin: 0;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .meta {
     position: static;
     width: unset;
     left: unset;
     right: unset;
     max-width: unset;
-  }
-
-  .meta .content-text {
-    display: none;
   }
 }
 
