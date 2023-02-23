@@ -167,6 +167,20 @@ h6 {
   margin: 0;
 }
 
+@media (min-width: 768px) {
+  .post h2::before {
+    content: "##";
+  }
+
+  .post h3::before {
+    content: "###";
+  }
+
+  .post h4::before {
+    content: "####";
+  }
+}
+
 h3 {
   opacity: 0.8;
 }
@@ -177,6 +191,12 @@ h4 {
 
 h5,
 h6 {
+  opacity: 0.4;
+}
+
+.heading::before {
+  position: absolute;
+  transform: translateX(calc(-100% - 10px));
   opacity: 0.4;
 }
 
@@ -494,6 +514,21 @@ a:hover,
 
 .post {
   --link: var(--blue);
+}
+
+.heading-link {
+  color: var(--fg);
+  background-image: none;
+  text-shadow: none;
+}
+
+.post .heading-link {
+  background-image: linear-gradient(var(--fg), var(--fg));
+  background-size: 0% 1px;
+}
+
+.post .heading-link:hover {
+  background-size: 100% 1px;
 }
 
 /* ---------------------------------- */
