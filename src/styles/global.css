@@ -69,8 +69,6 @@
   --accent-blue: #a5d6ff;
   --link: var(--gray9);
 
-  --selection: var(--grayA4);
-
   --spacer-y: 8;
   --prism-bg: #fbfbfb;
 
@@ -83,7 +81,6 @@
     --bg: #0d1117;
     --fg: var(--gray12);
     --prism-bg: #161b22;
-    --highlight-bg: var(--selection);
     --link: var(--gray11);
     --blue: #4895f4;
     --accent-blue: #a5d6ff;
@@ -113,7 +110,7 @@
 }
 
 ::selection {
-  background: var(--selection);
+  background: var(--highlight-bg);
   text-shadow: none;
   -webkit-text-decoration-color: var(--gray9);
   text-decoration-color: var(--gray9);
@@ -567,4 +564,5 @@ a:hover,
   color: var(--accent-blue);
   font-size: 0.9rem;
   font-family: var(--font-display);
+  font-feature-settings: normal;
 }
