@@ -24,10 +24,16 @@ export const heading = {
   },
   transform(node: Node, config: Config) {
     const attributes = node.transformAttributes(config);
+    attributes.class = "heading";
     const children = node.transformChildren(config);
     const { level, ...rest } = attributes;
     const id = generateID(children, attributes);
+    const link = new Tag(
+      "a",
+      { href: `#${id}`, class: "heading-link" },
+      children
+    );
 
-    return new Tag(`h${level}`, { ...rest, id }, children);
+    return new Tag(`h${level}`, { ...rest, id }, [link]);
   },
 };
