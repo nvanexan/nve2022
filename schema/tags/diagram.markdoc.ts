@@ -7,13 +7,28 @@ export const diagram = {
   attributes: {
     src: { type: String, required: true },
     alt: { type: String },
+    multimode: { type: Boolean },
   },
   transform: (node: Node, config: Config) => {
     const attributes = node.transformAttributes(config);
-    const svgdata = Helpers.getPublicFileSync(
-      attributes.src.replace("/public/", "")
-    );
-    attributes.svgdata = svgdata;
+    if (attributes.multimode) {
+      attributes.light = Helpers.getPublicFileSync(
+        attributes.src
+          .replace("/public/", "")
+          .replace(/(\.[\w\d_-]+)$/i, "_light$1")
+      );
+      attributes.dark = Helpers.getPublicFileSync(
+        attributes.src
+          .replace("/public/", "")
+          .replace(/(\.[\w\d_-]+)$/i, "_dark$1")
+      );
+      attributes.svgdata = attributes.dark;
+    } else {
+      attributes.svgdata = Helpers.getPublicFileSync(
+        attributes.src.replace("/public/", "")
+      );
+    }
+
     return new Tag(`nve-diagram`, attributes);
   },
 };

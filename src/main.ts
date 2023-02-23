@@ -11,7 +11,7 @@ function debounce(func: any, time: number = 100) {
   };
 }
 
-const mediaQuery = window.matchMedia("(max-width: 1024px)");
+const mediaQuery = window.matchMedia("(max-width: 1100px)");
 
 const images = document.querySelectorAll("article img");
 const imageCount = images.length;
