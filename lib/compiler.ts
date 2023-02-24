@@ -8,8 +8,16 @@ import { IArticleFrontMatter } from "./types";
 import Parser from "./parser";
 import RSS from "rss";
 
+export type ConfigWithBuildMode = Config & { buildMode: string };
+
+interface IRssEntry {
+  file: string;
+  frontmatter: IArticleFrontMatter;
+  content: string;
+}
+
 class Compiler {
-  private BASE_URL: string = "https://nick.vanexan.ca";
+  private BASE_URL: string = BuildHelpers.BASE_URL;
 
   private config: ConfigType;
   private parser: Parser;
@@ -77,30 +85,23 @@ class Compiler {
   public async compileRss() {
     console.log("------- compiling RSS feed... -------");
     const baseUrl = this.BASE_URL;
+    const config = { ...this.config, ...{ buildMode: "RSS" } };
 
     const feed = new RSS({
       title: "Changelog | Nick Van Exan",
       description: "Nick's monthly updates",
       site_url: baseUrl,
-      feed_url: baseUrl,
+      feed_url: baseUrl + "/feed.xml",
     });
 
-    const logs = [] as any[];
-    for await (const f of BuildHelpers.getAllFiles("./content/changelog")) {
-      // Remove the article-title when incorporating the log in a feed
-      const fileContent = await (
-        await BuildHelpers.getContentAsync(f)
-      ).replace('{% partial file="partials/article-title.md" /%}', "");
-      const ast = this.parser.parse(fileContent);
-      const frontmatter = this.parseFrontMatter(ast.attributes.frontmatter);
-      const content = Markdoc.renderers.html(
-        Markdoc.transform(ast, this.config)
-      );
-      logs.push({ file: f, frontmatter, content });
-    }
+    const entries = [] as IRssEntry[];
+    await this.processRssEntries("./content/changelog", config, entries);
+    await this.processRssEntries("./content/posts", config, entries);
 
-    logs
-      .reverse()
+    entries
+      .sort((a, b) => {
+        return Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date);
+      })
       .forEach(
         (l: {
           file: string;
@@ -121,6 +122,24 @@ class Compiler {
     const xml = feed.xml({ indent: true });
     await BuildHelpers.writeRss(xml);
     console.log("------- RSS feed compiled -------");
+  }
+
+  private async processRssEntries(
+    dir: string,
+    config: ConfigWithBuildMode,
+    entries: IRssEntry[]
+  ) {
+    for await (const f of BuildHelpers.getAllFiles(dir)) {
+      // Remove the article-title when incorporating the log in a feed
+      const fileContent = (await BuildHelpers.getContentAsync(f)).replace(
+        '{% partial file="partials/article-title.md" /%}',
+        ""
+      );
+      const ast = this.parser.parse(fileContent);
+      const frontmatter = this.parseFrontMatter(ast.attributes.frontmatter);
+      const content = Markdoc.renderers.html(Markdoc.transform(ast, config));
+      entries.push({ file: f, frontmatter, content });
+    }
   }
 
   private async initPartials() {

@@ -6,6 +6,7 @@ class BuildHelpers {
   static TEMPLATES_DIR: string = "./src/templates";
   static CONTENTS_DIR: string = "./content";
   static PUBLIC_DIR: string = "./public";
+  static BASE_URL: string = "https://nick.vanexan.ca";
 
   static getTemplateAsync(contentPath: string) {
     // For now we just have two templates, handling this in code
