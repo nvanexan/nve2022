@@ -165,16 +165,8 @@ h6 {
 }
 
 @media (min-width: 768px) {
-  .post h2::before {
-    content: "##";
-  }
-
-  .post h3::before {
-    content: "###";
-  }
-
-  .post h4::before {
-    content: "####";
+  .post .heading::before {
+    content: "#";
   }
 }
 
@@ -194,7 +186,12 @@ h6 {
 .heading::before {
   position: absolute;
   transform: translateX(calc(-100% - 10px));
-  opacity: 0.4;
+  opacity: 0;
+  transition: all ease-in-out 0.2s;
+}
+
+.heading:hover:before {
+  opacity: 1;
 }
 
 s {
@@ -578,7 +575,7 @@ nve-toc {
   --page-margin: calc((100vw - var(--content-width)) / 2);
   position: fixed;
   top: 100px;
-  right: calc(var(--page-margin) + var(--content-width) + var(--side));
+  right: calc(var(--page-margin) + var(--content-width) + var(--side) + 20px);
   width: calc(var(--page-margin) - var(--side) - 48px);
   max-width: 192px;
 }
