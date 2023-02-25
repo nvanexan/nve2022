@@ -9,11 +9,10 @@ export class NveToc extends HTMLElement {
 
   constructor() {
     super();
-    const internals = this.attachInternals();
+    let shadow = this.shadowRoot;
 
     // check for a Declarative Shadow Root
     // see https://developer.chrome.com/articles/declarative-shadow-dom/
-    let shadow = internals.shadowRoot;
     if (!shadow) {
       // there wasn't one. create a new Shadow Root:
       shadow = this.attachShadow({ mode: "open" });
