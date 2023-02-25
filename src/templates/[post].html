@@ -48,6 +48,14 @@
   </head>
   <body>
     <div class="app post">{{ CONTENT }}</div>
+    <nve-toc>
+      <template id="nve-toc-template" shadowrootmode="open">
+        <link rel="stylesheet" href="/styles/global.css" />
+        <div class="nve-toc-container">
+          <h5>Table of Contents</h5>
+        </div>
+      </template>
+    </nve-toc>
     <script defer type="module" src="/main.js"></script>
     <script defer src="/public/prism.js"></script>
   </body>

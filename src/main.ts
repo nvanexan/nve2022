@@ -1,7 +1,9 @@
 import { Diagram } from "./components/diagram";
+import { NveToc } from "./components/nve-toc";
 
 // // Define your components below
 customElements.define("nve-diagram", Diagram);
+customElements.define("nve-toc", NveToc);
 
 function debounce(func: any, time: number = 100) {
   let timer: any;
