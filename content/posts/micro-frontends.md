@@ -120,5 +120,4 @@ Doing MFEs well is not easy. It can get unruly pretty quickly. If you're having 
 {% partial file="partials/article-footer.md" /%}
 
 [^1]: To put this kind of thing in business context, see Nathan Curtis's discussion on $1,000,000 buttons in [And You Thought Buttons Were Easy?](https://medium.com/eightshapes-llc/and-you-thought-buttons-were-easy-26eb5b5c1871)
-
 [^2]: There is new tooling emerging that may make this less of an issue. With [StencilJS](https://stenciljs.com/), for example, you could write components for your design system that can then be compiled into framework-specific code in addition to native [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components). Most design systems in production today, however, haven't been set up in this way.
