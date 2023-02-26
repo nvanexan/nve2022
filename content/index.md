@@ -31,6 +31,6 @@ Software developer and certified privacy professional (CIPP C/E). Helping organi
 
 ## Contact
 
-- Email: [nick@vanexan.ca](mailto:nick@vanexan.ca)
+- Email: [hellonick@vanexan.ca](mailto:hellonick@vanexan.ca)
 - GitHub: [@nvanexan](https://github.com/nvanexan)
 - Follow via [RSS](/feed.xml) or [Email](https://buttondown.email/nickvanexan)

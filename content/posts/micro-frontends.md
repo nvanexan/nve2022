@@ -56,7 +56,7 @@ The following diagram illustrates the various stakeholders who are involved in t
 
 ## MFE Burdens and Common Mistakes
 
-There are a number of recurring that I've seen arise that at organizations in their early days with MFEs. These include:
+There are a number of recurring issues that I've seen arise at organizations during their early days with MFEs. These include:
 
 - Too many MFEs
 - Mixed technologies across MFEs
@@ -67,27 +67,29 @@ There are a number of recurring that I've seen arise that at organizations in th
 
 The biggest issue I've seen at organizations early in their MFE journey is the creation of too many MFEs. This is an issue of architecture. It is also an issue of communication, particularly among senior leadership.
 
-For example, leadership within my client's organization is asking how quickly the old Dojo-based UI can be replaced with the new design system. Can you do a one-for-one swap of a grid component, for example? 
+For example, leadership within my client's organization is asking how quickly the old Dojo-based UI can be replaced with the new design system. Can we do a one-for-one swap of a grid component, for example? Can we replace all the Dojo checkboxes with React checkboxes?
 
-While you might use MFEs to try that, in my experience that is not how best to think of MFEs. You don't want to replace single components with single MFE repos. You want to ensure that each MFE repo represents a logical segment of the application.
+While you *could try* to use MFEs to do this, in my experience this is not how best to think of MFEs. You don't want to replace single components with single MFE repos. You want to ensure that each MFE repo represents a logical segment of the application.
 
-While some discrete UI components may do fine as separate MFEs, generally you don't want to have an MFE for every UI component you are attempting to replace. If you have 1,000 base UI components, you'd end up with 1,000 MFEs. Now imagine trying to find the right repo to update your code. You can't easily. And good luck with not only debugging but onboarding too.
+While some discrete UI components may do fine as separate MFEs, generally you don't want to have an MFE for every UI component you are attempting to replace. If you have 1,000 base UI components, you'd end up with 1,000 MFEs. Now imagine trying to find the right repo to update your code. You can't easily. And good luck with debugging and onboarding.
 
-==The aim with MFEs is not to recreate spaghetti but rather to make your application more like a pizza. You want to slice your existing codebase into features or otherwise logical chunks, and move that entire slice into its own MFE.== 
+==The aim with MFEs is not to recreate spaghetti structures but to make your application more like a pizza. You want to slice your existing codebase into features or otherwise logical chunks, and move that entire slice into its own MFE.== 
 
 This process is of course more art than science. In some cases, a logical slice for an MFE might be a whole section of an application under a particular route of navigation. In other cases, it might be something more cross-cutting that still makes sense as a discrete unit of development, such as an inbox messaging service or a chatbot.
 
-The aim is to ensure that your MFEs represent sections of the application that are logically connected. Start from your desired end state: figure out what sections of the app you want to convert at a time and what engineers you want working on those sections, and then cut a new MFE.
+The aim is to ensure that your MFEs represent sections of the application that are logically connected. Start from your desired end state: figure out what sections of the app you want to convert at, when, and what engineers you want working on those sections, and *then* cut a new MFE.
 
 ### Mixed technologies across MFEs
 
-This is another sin I've seen repeated across organizations. MFEs are advertised as ways to allow your organization to have teams leveraging different tech stacks that suit their desires. Team A wants Vue, Team B wants Angular, and Team C wants React. With MFEs, they can each have it their way. Right?
+This is another sin I've seen repeated across organizations. MFEs are advertised as ways to allow teams to leverage different tech stacks that suit their desires. Team A wants Vue, Team B wants Angular, and Team C wants React. With MFEs, they can each have it their way. Right?
 
 Wrong. Or maybe, but you may not like the outcome.
 
-Firstly, if you do this, you'll need multiple design systems to cater to the multiple tech stacks, which is not desirable from a code re-usability point of view. Secondly, and crucially, if you do this you'll have different coding paradigms and patterns in each MFE, making it difficult for engineers on Team A to work on features maintained by engineers on Team B. From a governance perspective, and an engineering management perspective, this is a losing proposition. Specific teams may gain velocity, but the the velocity of the organization as a whole may suffer.
+Firstly, if you do this, you'll need multiple design systems to cater to the multiple tech stacks, which is not desirable from a code re-usability point of view.[^2] 
 
-Interoperability between teams isn't always a concern. And in some cases, having a team move fast on a particular feature using a new or different tech stack may make sense. There's no absolutes. But if the aim is to move a large organization into a cohesive new reality for a large application, I would advocate for keeping the technologies the same across your MFEs and design system.
+Secondly, if you do this you'll have different coding paradigms and patterns in each MFE, making it difficult for engineers on Team A to work on features maintained by engineers on Team B. From a governance perspective, and an engineering management perspective, this is a losing proposition. Specific teams may gain velocity, but the the velocity of the organization as a whole may suffer.
+
+Interoperability between teams isn't always a concern. And sometimes having a team move fast on a particular feature using a new or different tech stack makes total sense. There's no absolutes. But if the aim is to move a large organization into a cohesive new reality for a large application, keeping the technologies the same across your MFEs and design system will best preserve organizational velocity.
 
 ### Mixed patterns across MFEs
 
@@ -95,13 +97,15 @@ This is the same issue as above applied to patterns and practices. For example, 
 
 ### Poor documentation and communication
 
-This last issue is kindling for the rest of the above issues. And it is, again, a matter of governance.
+This last issue is kindling for the rest of the issues. And it is, again, a matter of governance.
 
 Platform engineering teams are needed to help ensure that MFEs are initially scaffolded with the right technologies, tooling, and patterns. They need to show the rest of the organization what a good starter MFE looks like, and how to go about building it out. And there needs to be adequate documentation of expectations, in the MFE readme files and on internal wikis.
 
-For engineers to work seamlessly across MFEs, each MFE needs to be well-documented, particularly where it departs from generally accepted organizational patterns, technologies or architectures. The feature teams, and the platform team, need to be working together to document and maintain standards and a cohesive approach to patterns and practices.
+Similarly, for engineers to work seamlessly across MFEs, each MFE needs to be well-documented, particularly where it departs from organizational patterns, technologies or architectures. 
 
-The aim should be making onboarding an engineer into an organization as painless as possible. With multiple MFEs, where potentially anything goes in each repo, greater vigilance in documenting decisions and approaches is needed.
+And the work doesn't end after first commit. The feature teams, and the platform team, need to always be working together to document and maintain standards and a cohesive approach to patterns and practices.
+
+When thinking about desired outcomes, the aim should be making onboarding an engineer into an organization as painless as possible. With multiple MFEs, where potentially anything goes in each repo, greater vigilance in documenting decisions and approaches and maintaining standards is needed.
 
 ## Summary of Lessons Learned
 
@@ -111,8 +115,10 @@ To summarize some lessons I've learned wrangling MFE architectures in the real w
 - **Align on patterns and tech stacks** => the same tooling for as many as possible
 - **Trust but verify; share and document** => make time for code reviews and knowledge shares for consistent patterns and practices across MFEs
 
-Doing MFEs well is not easy. It can get unruly pretty quickly. If you're having difficulties or growing pains with your move to an MFE architecture, I hope the above may be of some benefit. Cheers!
+Doing MFEs well is not easy. It can get unruly pretty quickly. If you're having difficulties or growing pains with your move to an MFE architecture, I hope the above may be of some benefit. 
 
 {% partial file="partials/article-footer.md" /%}
 
 [^1]: To put this kind of thing in business context, see Nathan Curtis's discussion on $1,000,000 buttons in [And You Thought Buttons Were Easy?](https://medium.com/eightshapes-llc/and-you-thought-buttons-were-easy-26eb5b5c1871)
+
+[^2]: There is new tooling emerging that may make this less of an issue. With [StencilJS](https://stenciljs.com/), for example, you could write components for your design system that can then be compiled into framework-specific code in addition to native [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components). Most design systems in production today, however, haven't been set up in this way.
