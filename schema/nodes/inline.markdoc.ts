@@ -11,5 +11,6 @@ export const inline = {
     "hardbreak",
     "softbreak",
     "footnoteRef",
+    "mark",
   ],
 };

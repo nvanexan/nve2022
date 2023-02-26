@@ -65,7 +65,7 @@ export class Text {
 
 But wait, there's more!
 
-Stencil doesn't just allow you to build and output Web Components for use in your other projects; it also can compile your Web Component into framework-specific component code (such as Vue, React, Angular, etc.). This makes Stencil a great choice for teams looking to build a future proof design system at organizations that might be using [Micro Frontends](https://nick.vanexan.ca/posts/micro-frontends) with different frameworks and tech stacks.[^1] You can literally write a component once, and compile it for Web (as a custom element), React, Vue, etc. 
+Stencil doesn't just allow you to build and output Web Components for use in your other projects; ==it also can compile your Web Component into framework-specific component code (such as Vue, React, Angular, etc.)==. This makes Stencil a great choice for teams looking to build a future proof design system at organizations that might be using [Micro Frontends](https://nick.vanexan.ca/posts/micro-frontends) with different frameworks and tech stacks.[^1] You can literally write a component once, and compile it for Web (as a custom element), React, Vue, etc. 
 
 ## SSR and Declarative Shadow Dom
 

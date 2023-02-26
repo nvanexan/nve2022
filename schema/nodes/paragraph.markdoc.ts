@@ -19,7 +19,6 @@ export const paragraph = {
     }
     const attributes = node.transformAttributes(config);
     const children = node.transformChildren(config);
-
     return new Tag(`p`, attributes, children);
   },
 };

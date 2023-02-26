@@ -13,6 +13,7 @@ import { footnoteItem } from "./nodes/footnoteItem.markdoc";
 import { inline } from "./nodes/inline.markdoc";
 import { list } from "./nodes/list.markdoc";
 import { heading } from "./nodes/heading.markdoc";
+import { mark } from "./nodes/mark.markdoc";
 import { diagram } from "./tags/diagram.markdoc";
 
 export const config = {
@@ -27,6 +28,7 @@ export const config = {
     list,
     footnoteRef,
     footnoteItem,
+    mark,
   },
   tags: {
     spacer,

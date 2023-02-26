@@ -72,6 +72,7 @@
   --spacer-y: 8;
   --prism-bg: #fbfbfb;
 
+  --light-green: rgba(46, 160, 67, 0.15);
   --highlight-bg: rgba(255, 216, 0, 0.2);
 }
 
@@ -110,10 +111,9 @@
 }
 
 ::selection {
-  background: var(--highlight-bg);
+  background: var(--fg);
+  color: var(--bg);
   text-shadow: none;
-  -webkit-text-decoration-color: var(--gray9);
-  text-decoration-color: var(--gray9);
 }
 
 * {
@@ -196,6 +196,11 @@ h6 {
 
 s {
   opacity: 0.3;
+}
+
+mark {
+  background: var(--highlight-bg);
+  color: var(--fg);
 }
 
 em,
