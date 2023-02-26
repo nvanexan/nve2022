@@ -11,11 +11,11 @@ summary: "A few words about me"
 
 Heya 👋, I'm Nick.
 
-I'm a senior software developer and data protection consultant. I've been working in tech for over 20 years, with clients across the spectrum from high-growth startups to large, multinational SaaS providers. 
+I'm a senior software developer and data protection consultant. I've been making things for the web for over 20 years, for myself and for clients across the spectrum from high-growth startups to large, multinational SaaS providers. 
 
-I am currently a senior consultant with [Centrilogic](https://www.centrilogic.com/) (formerly [ObjectSharp](https://objectsharp.com/)), where I help organizations  design and develop modern web applications primarily in the Microsoft Azure cloud. My primary focus is on front-end web development and building design systems that deliver accessible and performant UI at scale, but I also have signficant experience on the back-end building microservices in NodeJS and containerizing them for deployment in Azure Kubernetes clusters.
+I am currently a senior consultant with [Centrilogic](https://www.centrilogic.com/) (formerly [ObjectSharp](https://objectsharp.com/)), where I help organizations design and develop modern web applications. My primary focus is on front-end web development and building design systems that deliver accessible and performant UI at scale. I also have experience on the back-end building microservices for the Microsoft Azure cloud.
 
-I also consult on matters related to privacy and data protection through my own company, [Fieldwork](https://fieldwork.is). As a former lawyer and a current Certified Information Privacy Professional (CIPP) for Canada and Europe with the  [International Association of Privacy Professionals (IAPP)](https://iapp.org/), I have a unique background that allows me to work seamlessly as a privacy engineer for organizations needing clear communication of privacy requirements and technical architectural guidance on matters related to data protection.
+In addition to my sofware engineering work, I consult on matters related to privacy and data protection through my own company, [Fieldwork](https://fieldwork.is). As a former lawyer and a current [Certified Information Privacy Professional (CIPP)](https://iapp.org/certify/cipp/) for Canada and Europe, have a unique background that allows me to work seamlessly as a privacy engineer for organizations needing clear communication of privacy requirements and technical architectural guidance on matters related to data protection.
 
 Companies I've had the pleasure of working with include:
 

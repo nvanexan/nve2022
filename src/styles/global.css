@@ -74,6 +74,7 @@
 
   --light-green: rgba(46, 160, 67, 0.15);
   --highlight-bg: rgba(255, 216, 0, 0.2);
+  --border-color: var(--gray6);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -85,6 +86,7 @@
     --link: var(--gray11);
     --blue: #4895f4;
     --accent-blue: #a5d6ff;
+    --border-color: var(--gray6);
   }
 }
 
@@ -92,6 +94,7 @@
   :root {
     --blue: #0969da;
     --accent-blue: #2d4aae;
+    --border-color: var(--gray12);
   }
 
   .diagram.unimode path,
@@ -203,6 +206,12 @@ mark {
   color: var(--fg);
 }
 
+hr {
+  height: 0px;
+  border: none;
+  border-top: solid 1px var(--border-color);
+}
+
 em,
 blockquote {
   font-family: var(--font-serif);
@@ -246,6 +255,14 @@ article > :where(p, ul, ol, section) {
 .article-summary {
   color: var(--gray11);
   margin: 0;
+}
+
+@media (min-width: 1100px) {
+  .article-footer {
+    margin-top: 48px;
+    padding-top: 48px;
+    border-top: solid 1px var(--border-color);
+  }
 }
 
 p,
@@ -409,7 +426,7 @@ sup a:hover {
   left: unset;
   right: unset;
   max-width: unset;
-  border-top: solid 1px var(--gray6);
+  border-top: solid 1px var(--border-color);
   padding-top: 28px;
   margin-top: var(--spacer-y);
   opacity: 0;
