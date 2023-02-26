@@ -3,6 +3,7 @@ import Markdoc, { Ast, Node } from "@markdoc/markdoc";
 class Parser {
   private endNotePattern = /\[\^(\d+)\]:\s/m;
   private inlineFnPattern = /\[\^(\d+)\](?!:)/gm;
+  private hightlightPattern = /\=\=(.*)\=\=/im;
 
   constructor() {}
 
@@ -10,7 +11,39 @@ class Parser {
     const ast = Markdoc.parse(source);
     this.processFootnoteRefs(ast);
     this.processFootnotes(ast);
+    this.processHighlights(ast);
     return ast;
+  }
+
+  private processHighlights(ast: Node) {
+    let parent: Node = ast;
+    let count: number = 0;
+    for (const node of ast.walk()) {
+      if (node.attributes.content) {
+        const token = this.hightlightPattern.exec(node.attributes.content);
+        if (token) {
+          const [prevText, nextText] = node.attributes.content.split(token[0]);
+          node.attributes.content = prevText;
+
+          const mark = new Ast.Node("mark", { content: token[1] });
+          parent.children = this.insertAt(parent.children, mark, count);
+
+          // Create a text node for the text which follows after the footnote and insert it in the tree
+          if (nextText) {
+            count += 1;
+            const next = new Ast.Node("text", { content: nextText });
+            parent.children = this.insertAt(parent.children, next, count);
+          }
+        }
+      }
+
+      // If the node is of inline type, update parent
+      if (node.type == "inline") {
+        parent = node;
+        count = 0;
+      }
+      count += 1;
+    }
   }
 
   private *getFootnoteItemNodes(nodes: Node[]) {
