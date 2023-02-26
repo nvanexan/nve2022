@@ -30,4 +30,6 @@ The second law of thermodynamics - the arrow of time - tells us that either way 
 
 It's the simplest equation. It contains multitudes. It reminds me that we collide with one another, and leave traces in one another. It reminds me that if there's one goal worth pursuing, it's probably, simply, trying to make those traces as positive as I can. Looking back, I haven't always done well at remembering this. Looking forward, it's still a goal worthy of pursuit. I'm working on it.
 
+{% partial file="partials/article-footer.md" /%}
+
 [^1]: Marco Rovelli, [The Order of Time](https://www.penguinrandomhouse.com/books/551483/the-order-of-time-by-carlo-rovelli/).

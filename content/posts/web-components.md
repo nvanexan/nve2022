@@ -83,4 +83,6 @@ You can read more about how DSD works at the links above. But the TLDR is, with 
 
 As a new web platform API, Declarative Shadow DOM does not yet have widespread support across all browsers. But change is in the air. And the future for Web Components is looking bright.
 
+{% partial file="partials/article-footer.md" /%}
+
 [^1]: Indeed, some of the issues I mentioned in [this earlier post](https://nick.vanexan.ca/posts/micro-frontends) re disparate MFE tech stacks could fall away somewhat, at least at a technical level, if you use Stencil for your design system. Organizationally, I'd still recommend keeping a unifying stack for your MFEs.

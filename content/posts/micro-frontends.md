@@ -56,7 +56,7 @@ The following diagram illustrates the various stakeholders who are involved in t
 
 ## MFE Burdens and Common Mistakes
 
-Although early in our MFE journey, I am noticing issues arise that I've seen these at other organizations. These include:
+There are a number of recurring that I've seen arise that at organizations in their early days with MFEs. These include:
 
 - Too many MFEs
 - Mixed technologies across MFEs
@@ -67,11 +67,13 @@ Although early in our MFE journey, I am noticing issues arise that I've seen the
 
 The biggest issue I've seen at organizations early in their MFE journey is the creation of too many MFEs. This is an issue of architecture. It is also an issue of communication, particularly among senior leadership.
 
-For example, leadership within my client's organization is asking how quickly the old Dojo-based UI can be replaced with the new design system. Can you do a one-for-one swap of a grid component, for example? While you might use MFEs to try that, in my experience that is not how best to think of MFEs. You don't want to replace single components with single MFE repos. You want to ensure that each MFE repo represents a logical segment of the application.
+For example, leadership within my client's organization is asking how quickly the old Dojo-based UI can be replaced with the new design system. Can you do a one-for-one swap of a grid component, for example? 
+
+While you might use MFEs to try that, in my experience that is not how best to think of MFEs. You don't want to replace single components with single MFE repos. You want to ensure that each MFE repo represents a logical segment of the application.
 
 While some discrete UI components may do fine as separate MFEs, generally you don't want to have an MFE for every UI component you are attempting to replace. If you have 1,000 base UI components, you'd end up with 1,000 MFEs. Now imagine trying to find the right repo to update your code. You can't easily. And good luck with not only debugging but onboarding too.
 
-> The aim with MFEs is not to recreate spaghetti but rather to make your application more like a pizza. You want to slice your existing codebase into features or otherwise logical chunks, and move that entire slice into its own MFE. 
+==The aim with MFEs is not to recreate spaghetti but rather to make your application more like a pizza. You want to slice your existing codebase into features or otherwise logical chunks, and move that entire slice into its own MFE.== 
 
 This process is of course more art than science. In some cases, a logical slice for an MFE might be a whole section of an application under a particular route of navigation. In other cases, it might be something more cross-cutting that still makes sense as a discrete unit of development, such as an inbox messaging service or a chatbot.
 
@@ -110,5 +112,7 @@ To summarize some lessons I've learned wrangling MFE architectures in the real w
 - **Trust but verify; share and document** => make time for code reviews and knowledge shares for consistent patterns and practices across MFEs
 
 Doing MFEs well is not easy. It can get unruly pretty quickly. If you're having difficulties or growing pains with your move to an MFE architecture, I hope the above may be of some benefit. Cheers!
+
+{% partial file="partials/article-footer.md" /%}
 
 [^1]: To put this kind of thing in business context, see Nathan Curtis's discussion on $1,000,000 buttons in [And You Thought Buttons Were Easy?](https://medium.com/eightshapes-llc/and-you-thought-buttons-were-easy-26eb5b5c1871)
