@@ -93,7 +93,7 @@ Interoperability between teams isn't always a concern. And sometimes having a te
 
 ### Mixed patterns across MFEs
 
-This is the same issue as above applied to patterns and practices. For example, you may have some MFEs implementing class components and more OOP development patterns whereas other teams prefer functional programming styles and composability. Or in some repos your teams may use snake casing, and in others camel casing. Where the divergences in patterns and practices are material, it becomes less easy for engineers to work across MFEs. For better organizational velocity, teams should align on patterns across different MFE repos.
+This is the same issue as above applied to patterns and practices. At a high and material level, there needs to be consistency among MFEs around error handling, logging, harnesses and automation. The same is true at lower levels too, though. For example, you may have some MFEs implementing class components and more OOP development patterns whereas other teams prefer functional programming styles and composability. Or in some repos your teams may use snake casing, and in others camel casing. Where the divergences in patterns and practices are material, it becomes less easy for engineers to work across MFEs. For better organizational velocity, teams should align on patterns across different MFE repos.
 
 ### Poor documentation and communication
 
