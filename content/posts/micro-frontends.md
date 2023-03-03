@@ -9,7 +9,7 @@ summary: "Some thoughts on MFEs for large organizations"
 
 {% partial file="partials/article-title.md" /%}
 
-Last week I was asked by a client to give a talk on micro frontends and design systems. The organization is in the process of moving out of a monolithic architecture with an aging, unstable frontend codebase that was written in [Dojo](https://dojotoolkit.org/) to a UI written in [React](https://reactjs.org/).
+Last week I was asked by a client to give a talk on micro frontends and design systems. The organization is in the process of moving out of a monolithic architecture with an aging frontend codebase that was written in [Dojo](https://dojotoolkit.org/) to a UI written in [React](https://reactjs.org/).
 
 I work on and with a set of a11y teams that are working to improve the accessibility of the application to [WCAG AA standards](https://www.w3.org/WAI/WCAG2AA-Conformance), supporting the organization's journey both in the monolith and its movement to a React-based design system.
 
@@ -19,13 +19,13 @@ During my talk, I fielded questions about what micro frontends are, why they mig
 
 [Micro frontends](https://micro-frontends.org/) ("MFEs") are an architectural pattern. The pattern is used to solve organizational and technical issues that can arise in organizations with monolith codebases. In our case, the problems that have arisen are:
 
-- The frontend code for the monolith is written in old technology, [Dojo](https://dojotoolkit.org/), which does not lend itself to well-written component-based UI.
+- The frontend code for the monolith is written in old technology, [Dojo](https://dojotoolkit.org/), which does not lend itself to well-written component-based UI. Dojo widgets are leaky. And over time, can move the frontend toward spaghetti code.
 - The frontend code in the monolith lacks unit tests. Reliance is instead placed on end-to-end regression tests.
-- Regressions are often not caught until code is shipped to main and deployed to many QA testing environments, resulting in lengthy delays between when an engineer makes a change and when defects are caught; in addition, if the defect is serious enough, developers can block the work of other teams by committing a bug to main.
+- Regressions are often not caught until code is shipped to main and deployed to many QA testing environments, resulting in lengthy delays between when an engineer makes a change and when defects are caught. If the defect is serious enough, developers can block the work of other teams by committing a bug to main.
 - Working with the git repo is slow and time consuming: changing branches, pulling latest, performing rebases - it all takes a long time in the monolith; nothing is snappy.
-- There is no design system for the monolith: no clear documentation of APIs for UI components, no clear separation of business and UI logic in platform-level components, and many components are repeated within the monolith by multiple teams (e.g. each team has their own implementation of a combo box).[^1]
+- Most importantly, from my team's perspective, there is no proper design system for the monolith: no clear documentation of APIs for UI components, no clear separation of business and UI logic in platform-level components, and many components are repeated within the monolith by multiple teams (e.g. each team has their own implementation of a combo box).[^1]
 
-These issues aren't great, for morale, for DX, for code quality, for user experience, and more. But with 15 year old software, you can't re-write everything in one shot overnight. You need to move incrementally to your desired state. And that's where MFEs play an important role.
+These issues aren't great: for morale, for DX, for code quality, for user experience, and more. But with 15 year old software, you can't re-write everything in one shot overnight. You need to move incrementally to your desired state. And that's where MFEs play an important role.
 
 The goal with implementing MFEs is to allow frontend teams to scaffold new repos that are separate and independent from the monolith.
 
@@ -33,7 +33,7 @@ Those repos can have their own modern tech stack. In my client's case, that stac
 
 Moreover, because those frontends exist in separate repos, they can be built, tested and deployed independently of the monolith. Teams working on MFEs can move fast on building and shipping a feature, without being bogged down in the slow process required to make changes to the delicate monolith.
 
-In the monolith, hooks are then embedded into the Dojo-based codebase to render the MFE apps where they need to be seen. I refer to this as "hole-punching". You punch holes in your existing app to create a window to an MFE that is served independently. This can be done for a feature in the app, or for something used by many features, such as a global header or footer of the application.
+In the monolith, hooks are then embedded into the Dojo-based codebase to render the MFE apps where they need to be seen. I call this "hole-punching". You punch holes in your existing app to create a window to an MFE that is served independently. This can be done for a feature in the app, or for something used by many features, such as a global header or footer of the application.
 
 {% diagram src="/public/images/MFEs.svg" alt="MFE 'Hole Punch' Architecture" /%}
 
@@ -65,7 +65,7 @@ There are a number of recurring issues that I've seen arise at organizations dur
 
 ### Too many MFEs
 
-The biggest issue I've seen at organizations early in their MFE journey is the creation of too many MFEs. This is an issue of architecture. It is also an issue of communication, particularly among senior leadership.
+The biggest issue I've seen at organizations early in their MFE journey is the creation of too many MFEs too quickly. This is an issue of architecture. It is also an issue of communication, particularly among senior leadership.
 
 For example, leadership within my client's organization is asking how quickly the old Dojo-based UI can be replaced with the new design system. Can we do a one-for-one swap of a grid component, for example? Can we replace all the Dojo checkboxes with React checkboxes?
 
@@ -103,7 +103,7 @@ Platform engineering teams are needed to help ensure that MFEs are initially sca
 
 Similarly, for engineers to work seamlessly across MFEs, each MFE needs to be well-documented, particularly where it departs from organizational patterns, technologies or architectures. 
 
-And the work doesn't end after first commit. The feature teams, and the platform team, need to always be working together to document and maintain standards and a cohesive approach to patterns and practices.
+And the work doesn't end after first commit. The feature teams, and the platform team, need to always be working together to document and maintain standards and a cohesive approach to patterns and practices. And here's the important part for leadership: these teams need to be supported in these efforts, with adequate resources and clear direction ==to ensure the organization is moving from 1 monolith to several MFEs together, as one, and not moving from 1 monolith to several MFEs that become their own fiefdoms with distinct tools, processes, standards and laws==.
 
 When thinking about desired outcomes, the aim should be making onboarding an engineer into an organization as painless as possible. With multiple MFEs, where potentially anything goes in each repo, greater vigilance in documenting decisions and approaches and maintaining standards is needed.
 
