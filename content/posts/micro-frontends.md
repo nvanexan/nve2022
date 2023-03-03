@@ -77,7 +77,7 @@ While some discrete UI components may do fine as separate MFEs, generally you do
 
 This process is of course more art than science. In some cases, a logical slice for an MFE might be a whole section of an application under a particular route of navigation. In other cases, it might be something more cross-cutting that still makes sense as a discrete unit of development, such as an inbox messaging service or a chatbot.
 
-The aim is to ensure that your MFEs represent sections of the application that are logically connected. Start from your desired end state: figure out what sections of the app you want to convert at, when, and what engineers you want working on those sections, and *then* cut a new MFE.
+The aim is to ensure that your MFEs represent sections of the application that are logically connected. Start from your desired end state: figure out what sections of the app you want to convert, when, and what engineers you want working on those sections, and *then* cut a new MFE.
 
 ### Mixed technologies across MFEs
 
@@ -87,7 +87,7 @@ Wrong. Or maybe, but you may not like the outcome.
 
 Firstly, if you do this, you'll need multiple design systems to cater to the multiple tech stacks, which is not desirable from a code re-usability point of view.[^2] 
 
-Secondly, if you do this you'll have different coding paradigms and patterns in each MFE, making it difficult for engineers on Team A to work on features maintained by engineers on Team B. From a governance perspective, and an engineering management perspective, this is a losing proposition. Specific teams may gain velocity, but the the velocity of the organization as a whole may suffer.
+Secondly, if you do this you'll have different coding paradigms and patterns in each MFE, making it difficult for engineers on Team A to work on features maintained by engineers on Team B. From a governance perspective, and an engineering management perspective, this is a losing proposition. Specific teams may gain velocity, but the velocity of the organization as a whole may suffer.
 
 Interoperability between teams isn't always a concern. And sometimes having a team move fast on a particular feature using a new or different tech stack makes total sense. There's no absolutes. But if the aim is to move a large organization into a cohesive new reality for a large application, keeping the technologies the same across your MFEs and design system will best preserve organizational velocity.
 
