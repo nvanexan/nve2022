@@ -15,8 +15,6 @@ I'm a senior software developer and data protection consultant. I've been making
 
 I am currently a senior consultant with [Centrilogic](https://www.centrilogic.com/) (formerly [ObjectSharp](https://objectsharp.com/)), where I help organizations design and develop modern web applications. My primary focus is on front-end web development and building design systems that deliver accessible and performant UI at scale. I also have experience building microservices (primarily for the Azure Cloud), containerizing applications, writing "serverless" functions, and building CLIs.
 
-In addition to my software engineering work, I consult on matters related to privacy and data protection through my company, [Fieldwork](https://fieldwork.is). As a former lawyer and a current [Certified Information Privacy Professional (CIPP)](https://iapp.org/certify/cipp/) for Canada and Europe, I have a unique background that allows me to work seamlessly as a privacy engineer. In this role, I provide guidance to organizations on how to decrease privacy risks and implement effective controls in their information systems.
-
 Organizations I've had the pleasure of working with include:
 
 {% section .company-list %}
