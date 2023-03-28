@@ -1,7 +1,7 @@
 --- 
 seo_title: "Changelog | Nick Van Exan" 
 title: "Changelog" 
-date: "2023-02-28T00:00:00Z" 
+date: "2023-03-28T13:26:33" 
 social_image: "" 
 summary: "Monthly updates + happenings"
 published: true
