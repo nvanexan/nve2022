@@ -34,6 +34,7 @@ New: the changelog is also now available as an [RSS feed](/feed.xml) and [Email 
 {% partial file="changelog/2023-03.md" /%}
 {% partial file="changelog/2023-02.md" /%}
 {% partial file="changelog/2023-01.md" /%}
+{% partial file="changelog/2022-12.md" /%}
 {% partial file="changelog/2022-11.md" /%}
 {% partial file="changelog/2022-06.md" /%}
 {% partial file="changelog/2022-06.md" /%}
