@@ -2,7 +2,7 @@
 seo_title: "Now | Nick Van Exan"
 seo_description: "Current areas of focus + interests"
 title: "What I'm Doing Now"
-date: "2022-11-11T00:00:00Z"
+date: "2023-05-19T00:00:00Z"
 social_image: ""
 summary: "Current areas of focus + interests"
 ---
