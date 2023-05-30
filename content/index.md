@@ -9,7 +9,7 @@ summary: "Current areas of focus + interests"
 
 # Nick Van Exan
 
-Software developer and certified privacy professional (CIPP C/E). Helping organizations build ethical products and services people _trust_.
+Software developer and certified privacy professional (CIPP C/E). Helping organizations build _ethical_ products and services people can trust.
 
 {% section .index-links %}
 
