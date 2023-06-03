@@ -14,7 +14,7 @@ summary: "Current areas of focus + interests"
 - Contributing to open source projects like [Markdoc](https://github.com/markdoc/markdoc).
 - Learning how to play the guitar.
 - Reading: How to Do Nothing by Jenny Odell
-- [Currently listening to](https://youtu.be/xzGdOUz9lWg)
+- [Currently listening to](https://open.spotify.com/playlist/506bwaxNJVn6LWsuwbirK4?si=2d7b6296bbb74c06)
 
 {% spacer /%}
 
