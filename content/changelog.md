@@ -1,7 +1,7 @@
 --- 
 seo_title: "Changelog | Nick Van Exan" 
 title: "Changelog" 
-date: "2023-05-31T23:44:25" 
+date: "2023-07-01T12:58:10Z" 
 social_image: "" 
 summary: "Monthly updates + happenings"
 published: true
@@ -15,6 +15,7 @@ New: the changelog is also now available as an [RSS feed](/feed.xml) and [Email 
 
 {% section .bookmarks %}
 
+- [2023.06](#june-2023) 
 - [2023.05](#may-2023) 
 - [2023.04](#april-2023) 
 - [2023.03](#march-2023) 
@@ -33,6 +34,7 @@ New: the changelog is also now available as an [RSS feed](/feed.xml) and [Email 
 
 {% /section %}
 
+{% partial file="changelog/2023-06.md" /%}
 {% partial file="changelog/2023-05.md" /%}
 {% partial file="changelog/2023-04.md" /%}
 {% partial file="changelog/2023-03.md" /%}
