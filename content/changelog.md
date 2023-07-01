@@ -15,7 +15,7 @@ New: the changelog is also now available as an [RSS feed](/feed.xml) and [Email 
 
 {% section .bookmarks %}
 
-- [2023.05](#june-2023) 
+- [2023.06](#june-2023) 
 - [2023.05](#may-2023) 
 - [2023.04](#april-2023) 
 - [2023.03](#march-2023) 
