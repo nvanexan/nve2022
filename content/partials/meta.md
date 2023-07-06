@@ -2,6 +2,6 @@
 
 [Nick Van Exan](/) {% .content-heading %}
 
-Software Engineer {% .content-text %}
+Software Developer {% .content-text %}
 
 {% /header %}
