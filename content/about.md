@@ -2,7 +2,7 @@
 seo_title: "About | Nick Van Exan"
 seo_description: "A few words about me"
 title: "About"
-date: "2022-05-17T00:19:41Z"
+date: "2023-09-22T00:19:41Z"
 social_image: ""
 summary: "A few words about me"
 ---
@@ -11,11 +11,9 @@ summary: "A few words about me"
 
 Heya 👋, I'm Nick.
 
-I'm a senior software developer and data protection consultant. I've been making things for the web for over 20 years, for myself and for clients ranging from high-growth startups to multinational SaaS providers. 
+I'm a senior software developer focused primarily on JavaScript / TypeScript tech stacks. I've been making things for the web for over 15 years, for myself and for clients ranging from high-growth startups to multinational SaaS providers. 
 
-I am currently a senior consultant with [Centrilogic](https://www.centrilogic.com/) (formerly [ObjectSharp](https://objectsharp.com/)), where I help organizations design and develop modern web applications. My primary focus is on front-end web development and building design systems that deliver accessible and performant UI at scale. I also have experience building microservices (primarily for the Azure Cloud), containerizing applications, writing serverless functions and APIs, and building CLIs.
-
-In addition to my software engineering work, I consult on matters related to privacy and data protection through my company, [Fieldwork](https://fieldwork.is). As a former lawyer and a current [Certified Information Privacy Professional (CIPP)](https://iapp.org/certify/cipp/) for Canada and Europe, I have a unique background that allows me to work seamlessly as a privacy engineer. In this role, I provide guidance to organizations on how to decrease privacy risks and implement effective controls in their information systems.
+I am currently a senior consultant with [ObjectSharp](https://objectsharp.com/) (a [Centrilogic](https://www.centrilogic.com/) company), where I help organizations design and develop modern web applications. My primary focus is on front-end web development and building design systems that deliver accessible and performant UI at scale. I also have experience building microservices (primarily for the Azure Cloud), containerizing applications, writing serverless functions and APIs, and building CLIs. In terms of subject matter expertise, I am a [Certified Information Privacy Professional (CIPP)](https://iapp.org/certify/cipp/) for Canada and Europe and have deep practical experience building WCAG AA compliant UI and design systems for enterprise software applications, such as Ceridian Dayforce.
 
 Organizations I've had the pleasure of working with include:
 
