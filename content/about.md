@@ -15,7 +15,7 @@ I'm a senior software developer and data protection consultant. I've been making
 
 I am currently a senior consultant with [ObjectSharp (a Centrilogic company)](https://objectsharp.com/), where I help organizations design and develop modern web applications. My primary focus is on front-end web development and building design systems that deliver accessible and performant UI at scale. I also have experience building microservices (primarily for the Azure Cloud), containerizing applications, writing serverless functions and APIs, and building CLIs. 
 
-In terms of subject matter expertise, I am a Certified Information Privacy Professional (CIPP) for Canada and Europe and have deep practical experience building WCAG AA compliant UI and design system components for enterprise software applications.
+In terms of subject matter expertise, I am a Certified Information Privacy Professional (CIPP) for Canada and Europe and have deep practical experience building WCAG AA compliant UI for enterprise software applications.
 
 Organizations I've had the pleasure of working with include:
 
