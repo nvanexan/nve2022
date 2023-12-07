@@ -330,6 +330,10 @@ ul {
   padding: 0;
 }
 
+ul ul {
+  margin: 0 0 0 1rem;
+}
+
 ul li:before {
   content: "–";
   display: inline-block;
