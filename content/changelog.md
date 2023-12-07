@@ -15,6 +15,7 @@ New: the changelog is also now available as an [RSS feed](/feed.xml) and [Email 
 
 {% section .bookmarks %}
 
+- [2023.09](#october-2023)
 - [2023.09](#september-2023)
 - [2023.08](#august-2023)
 - [2023.07](#july-2023)
@@ -37,6 +38,7 @@ New: the changelog is also now available as an [RSS feed](/feed.xml) and [Email 
 
 {% /section %}
 
+{% partial file="changelog/2023-10.md" /%}
 {% partial file="changelog/2023-09.md" /%}
 {% partial file="changelog/2023-08.md" /%}
 {% partial file="changelog/2023-07.md" /%}
