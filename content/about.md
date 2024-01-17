@@ -11,9 +11,9 @@ summary: "A few words about me"
 
 Heya 👋, I'm Nick.
 
-I'm a senior software developer and data protection consultant. I've been making things for the web for over 20 years, for myself and for clients ranging from high-growth startups to multinational SaaS providers. 
+I'm a software developer and data protection consultant. I've been making things for the web for over 20 years, for myself and for clients ranging from high-growth startups to multinational SaaS providers. 
 
-I am currently a senior consultant with [ObjectSharp (a Centrilogic company)](https://objectsharp.com/), where I help organizations design and develop modern web applications. My primary focus is on front-end web development and building design systems that deliver accessible and performant UI at scale. I also have experience building microservices (primarily for the Azure Cloud), containerizing applications, writing serverless functions and APIs, and building CLIs. 
+I am currently a consultant with [ObjectSharp (a Centrilogic company)](https://objectsharp.com/), where I help organizations design and develop modern web applications. My primary focus is on front-end web development and building design systems that deliver accessible and performant UI at scale. I also have experience building microservices (primarily for the Azure Cloud), containerizing applications, writing serverless functions and APIs, and building CLIs. 
 
 In terms of subject matter expertise, I am a Certified Information Privacy Professional (CIPP) for Canada and Europe and have deep practical experience building WCAG AA compliant UI for enterprise software applications.
 
